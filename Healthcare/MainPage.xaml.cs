@@ -95,9 +95,8 @@ namespace Healthcare
             }
             else
             {
-                string type = typeof(Model.DiseaseListItem).Name;
                 string destination = "/GeneralResultPage.xaml";
-                destination += string.Format("?keyword={0}?type={1}", this.TBMainSearch.Text,type);
+                destination += string.Format("?keyword={0}", this.TBMainSearch.Text);
                 NavigationService.Navigate(new Uri(destination, UriKind.Relative));
             }
 

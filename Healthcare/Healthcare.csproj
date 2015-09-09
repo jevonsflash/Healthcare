@@ -96,33 +96,27 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\JMessBox.cs" />
-    <Compile Include="GeneralDetailPage.xaml.cs">
-      <DependentUpon>GeneralDetailPage.xaml</DependentUpon>
+    <Compile Include="DiseaseDetailPage.xaml.cs">
+      <DependentUpon>DiseaseDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneralResultPage.xaml.cs">
       <DependentUpon>GeneralResultPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\FileHelper.cs" />
     <Compile Include="Helper\HttpHelper.cs" />
     <Compile Include="Helper\StaticURLHelper.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\CookListItem.cs" />
     <Compile Include="Model\CookShowItem.cs" />
-    <Compile Include="Model\DiseaseListItem.cs" />
     <Compile Include="Model\DiseaseShowItem.cs" />
-    <Compile Include="Model\DrugListItem.cs" />
     <Compile Include="Model\DurgShowItem.cs" />
-    <Compile Include="Model\FoodCookItem.cs" />
-    <Compile Include="Model\FoodListItem.cs" />
     <Compile Include="Model\FoodShowItem.cs" />
-    <Compile Include="Model\GeneralSearchItem.cs" />
     <Compile Include="Model\GeneralSieveItem.cs" />
     <Compile Include="Model\JsonResult.cs" />
-    <Compile Include="Model\NewsListItem.cs" />
+    <Compile Include="Model\KeyWordsMap.cs" />
     <Compile Include="Model\NewsShowItem.cs" />
-    <Compile Include="Model\SymptomListItem.cs" />
     <Compile Include="Model\SymptomShowItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
@@ -141,7 +135,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="GeneralDetailPage.xaml">
+    <Page Include="DiseaseDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +196,7 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\symptom.xml" />
     <Content Include="ico\健康知识.png" />
     <Content Include="ico\健康资讯.png" />
     <Content Include="ico\健康食品.png" />
@@ -224,6 +219,7 @@
     <Content Include="Img\thumb\thumb_matopeace.jpg" />
     <Content Include="Img\thumb\thumb_metro.png" />
     <Content Include="Img\UserContro.png" />
+    <Content Include="symptom.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

@@ -6,64 +6,30 @@ using System.Threading.Tasks;
 
 namespace Healthcare.Model
 {
-    class DiseaseShowItem
+    public class DiseaseShowItem
     {
-        /// <summary>
-        /// 疾病ID 
-        /// </summary>
-        public int id { get; set; }
-        /// <summary>
-        /// 疾病标题 
-        /// </summary>
-        public string name { get; set; }
-        /// <summary>
-        /// 图片
-        /// </summary>
-        public string img { get; set; }
-        /// <summary>
-        /// 浏览次数
-        /// </summary>
-        public int count { get; set; } 
-        /// <summary>
-        /// 科室
-        /// </summary>
-        public string department { get; set; }
-        /// <summary>
-        /// 部位
-        /// </summary>
-        public string place { get; set; }
-        /// <summary>
-        /// 疾病简介
-        /// </summary>
-        public string summary { get; set; }
-        /// <summary>
-        /// 相关病状
-        /// </summary>
-        public string symptom { get; set; }
-        /// <summary>
-        /// 病状详情
-        /// </summary>
-        public string symptomText { get; set; }
-        /// <summary>
-        /// 食疗
-        /// </summary>
-        public string foodText { get; set; }
-        /// <summary>
-        /// 相关疾病
-        /// </summary>
-        public string disease { get; set; }
-        /// <summary>
-        /// 疾病说明
-        /// </summary>
-        public string diseaseText { get; set; }
-        /// <summary>
-        /// 病因
-        /// </summary>
-        public string causeText { get; set; }
-        /// <summary>
-        /// 注意、医疗 
-        /// </summary>
-        public string careText { get; set; }
-        
+        public int id { get; set; }//id
+        public String name { get; set; }//疾病名称
+        public String img { get; set; }//图片
+        public String department { get; set; }//疾病科室
+        public String place { get; set; }//疾病部位
+        public String message { get; set; }//简介，摘要
+        public String keywords { get; set; }
+        public String description { get; set; }
+        public String symptomtext { get; set; }//病状描述
+        public String symptom { get; set; }//相关症状
+        public String drug { get; set; }//相关药品
+        public String drugtext { get; set; }//用药说明
+        public String food { get; set; }//相关食品
+        public String foodtext { get; set; }//健康保健
+        public String causetext { get; set; }//病因
+        public String checks { get; set; }//检测项目
+        public String checktext { get; set; }//检测说明
+        public String disease { get; set; }//并发疾病
+        public String diseasetext { get; set; }//并发症状说明
+        public String caretext { get; set; }//预防护理
+        public int count { get; set; }
+        public int rcount { get; set; }//回复
+        public int fcount { get; set; }//收藏
     }
 }

@@ -10,13 +10,14 @@ using Microsoft.Phone.Shell;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Healthcare.JMessbox;
+using Healthcare.Helper;
+using System.Threading.Tasks;
 
 namespace Healthcare
 {
     public partial class GeneralResultPage : PhoneApplicationPage
     {
         private Server.DiseaseServer diseaseser = new Server.DiseaseServer();
-        private List<Model.GeneralSearchItem> SearchList = new List<Model.GeneralSearchItem>();
         private string keyword;
         public GeneralResultPage()
             : base()
@@ -30,16 +31,6 @@ namespace Healthcare
         #region 事件
 
 
-        void ht_FileWatchEvent(object sender, CompleteEventArgs e)
-        {
-            SearchList = diseaseser.DiseaseSearchDeserializer(e.Node).ToList();
-            this.Dispatcher.BeginInvoke(() =>
-            {
-               
-                this.LLSResult.ItemsSource = SearchList;
-                
-            });
-        }
 
 
 
@@ -67,13 +58,13 @@ namespace Healthcare
 
         private void LLSResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string idStr = ((sender as LongListSelector).SelectedItem as Model.GeneralSearchItem).id.ToString();
+            string idStr = ((sender as LongListSelector).SelectedItem as Model.KeyWordsMap).id.ToString();
             string destination = "/GeneralDetailPage.xaml";
             destination += string.Format("?id={0}", idStr);
             NavigationService.Navigate(new Uri(destination, UriKind.Relative));
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
 
             base.OnNavigatedTo(e);
@@ -86,9 +77,14 @@ namespace Healthcare
             }
             if (!string.IsNullOrEmpty(keyword))
             {
-                string url = Helper.StaticURLHelper.DiseaseSearch;
 
-                GetData(url, keyword);
+                List<Model.KeyWordsMap> result = await GetData(keyword);
+                this.Dispatcher.BeginInvoke(() =>
+                {
+
+                    this.LLSResult.ItemsSource = result;
+
+                });
             }
 
         }
@@ -126,13 +122,11 @@ namespace Healthcare
             ib01.Opacity = 10;
             this.LayoutRoot.Background = ib01;
         }
-        private void GetData(string url, string keyword)
+        private async Task<List<Model.KeyWordsMap>> GetData(string keyword)
         {
-            HttpHelper ht = new HttpHelper();
-            Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("keyword", keyword);
-            ht.CreatePostHttpResponse(url, dic);
-            ht.FileWatchEvent += ht_FileWatchEvent;
+            List<Model.KeyWordsMap> list = await FileHelper.ReadMap();
+            List<Model.KeyWordsMap> result = list.FindAll(c => c.keywords.Contains(keyword));
+            return result;
         }
 
 

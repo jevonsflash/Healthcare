@@ -6,56 +6,23 @@ using System.Threading.Tasks;
 
 namespace Healthcare.Model
 {
-    class SymptomShowItem
+    public class SymptomShowItem
     {
-        /// <summary>
-        /// 疾病ID 
-        /// </summary>
         public int id { get; set; }
-        /// <summary>
-        /// 疾病标题 
-        /// </summary>
-        public string name { get; set; }
-        /// <summary>
-        /// 图片
-        /// </summary>
-        public string img { get; set; }
-        /// <summary>
-        /// 浏览次数
-        /// </summary>
-        public int count { get; set; }
-        /// <summary>
-        /// 部位
-        /// </summary>
-        public string place { get; set; }
-        /// <summary>
-        /// 疾病简介
-        /// </summary>
-        public string summary { get; set; }
-        /// <summary>
-        /// 评论数
-        /// </summary>
-        public int rcount { get; set; }
-        /// <summary>
-        /// 收藏数
-        /// </summary>
-        public int fcount { get; set; }
-        /// <summary>
-        /// 相关疾病
-        /// </summary>
-        public string disease { get; set; }
-        /// <summary>
-        /// 病因
-        /// </summary>
-        public string causeText { get; set; }
-        /// <summary>
-        /// 相关检查
-        /// </summary>
-        public string check { get; set; }
-        /// <summary>
-        /// 相关药品
-        /// </summary>
-        public string drug { get; set; }
-
+        public String name { get; set; }//疾病名称
+        public String img { get; set; }//图片
+        public String keywords { get; set; }
+        public String description { get; set; }
+        public String department { get; set; }//疾病科室
+        public String place { get; set; }//疾病部位
+        public String message { get; set; }//简介，摘要
+        public String disease { get; set; }//相关疾病
+        public String causetext { get; set; }//病因
+        public String drug { get; set; }//相关药品
+        public String detailtext { get; set; }//诊断详情
+        public String checks { get; set; }//检测项目
+        public int count { get; set; }//访问次数
+        public int rcount { get; set; }//回复
+        public int fcount { get; set; }//收藏
     }
 }

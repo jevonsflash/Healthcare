@@ -36,7 +36,7 @@ D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\XapCacheFile.xml
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Newtonsoft.Json.dll
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Newtonsoft.Json.xml
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\Healthcare.csprojResolveAssemblyReference.cache
-D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Microsoft.Expression.Drawing.dll
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\GeneralResultPage.g.cs
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Microsoft.Phone.Controls.dll
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\UserControl\JMessboxControl.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\GeneralDetailPage.g.cs

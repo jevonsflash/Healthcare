@@ -40,11 +40,12 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition/>
+                <RowDefinition Height="*"></RowDefinition>
+                
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Border x:Name="BD_TBFrame" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="White" CornerRadius="36">
-                    <TextBox x:Name="TBMainSearch"  
+                    <TextBox x:Name="TBMainSearch"
 						HorizontalAlignment="Left"
 						Text="TextBox" 
 						Width="456" 
@@ -56,18 +57,22 @@
 
             </Grid>
             <Grid Grid.Row="1" >
-                <Button x:Name="BTNSearch" Click="BTNSearch_Click" Content="Button"  HorizontalAlignment="Right"  VerticalAlignment="Top" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" />
+                <Button x:Name="BTNSearch" Click="BTNSearch_Click" Content="Button"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" />
             </Grid>
             <phone:LongListSelector 
                 x:Name="LLSResult" 
-                Grid.Row="1" SelectionChanged="LLSResult_SelectionChanged"
+                Grid.Row="2" SelectionChanged="LLSResult_SelectionChanged"
                 >
                 
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <TextBlock Text="{Binding Path=id}"  Margin="70 10" FontSize="18"></TextBlock>
-                            <TextBlock Text="{Binding Path=title}"  Margin="70 10" FontSize="18"></TextBlock>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Path=id}"  Margin="70 10" FontSize="22"></TextBlock>
+                            <TextBlock Grid.Column="1" Text="{Binding Path=name}"  Margin="70 10" FontSize="22"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>

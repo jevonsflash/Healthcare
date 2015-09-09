@@ -10,14 +10,14 @@ using Microsoft.Phone.Shell;
 
 namespace Healthcare
 {
-    public partial class GeneralDetailPage : PhoneApplicationPage
+    public partial class DiseaseDetailPage : PhoneApplicationPage
     {
         private Server.DiseaseServer diseaseser = new Server.DiseaseServer();
         private Model.DiseaseShowItem diseaseShow = new Model.DiseaseShowItem();
 
         private string idStr;
 
-        public GeneralDetailPage()
+        public DiseaseDetailPage()
         {
             InitializeComponent();
         }
@@ -49,13 +49,7 @@ namespace Healthcare
 
         void ht_FileWatchEvent(object sender, CompleteEventArgs e)
         {
-            diseaseShow = diseaseser.DiseaseShowDeserializer(e.Node);
-            this.Dispatcher.BeginInvoke(() =>
-            {
 
-                
-
-            });
         }
 
     }

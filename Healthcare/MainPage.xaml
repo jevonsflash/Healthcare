@@ -34,16 +34,16 @@
                         键入你的
                     </TextBlock>
                 </Grid>
-                <Grid Grid.Row="1"> 
+                <Grid Grid.Row="1">
                     <Border x:Name="BD_TBFrame" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="White" CornerRadius="36">
-                    <TextBox x:Name="TBMainSearch"  
+                        <TextBox x:Name="TBMainSearch"  
                              HorizontalAlignment="Left"
                              Style="{StaticResource TextBoxStyle1}" 
                              GotFocus="TBMainSearch_GotFocus" LostFocus="TBMainSearch_LostFocus" 
                              SelectionForeground="{StaticResource PhoneForegroundBrush}"
                              Foreground="{StaticResource PhoneForegroundBrush}" Loaded="TBMainSearch_Loaded" Margin="0,0,-1,0" Width="419">
-                    </TextBox>
-                </Border>
+                        </TextBox>
+                    </Border>
 
                     <Button x:Name="BTNSearch" Content="Button"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" Click="BTNSearch_Click" >
                     </Button>
