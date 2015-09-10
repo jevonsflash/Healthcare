@@ -15,7 +15,10 @@
     <File>Assets\Tiles\FlipCycleTileSmall.png</File>
     <File>Assets\Tiles\IconicTileMediumLarge.png</File>
     <File>Assets\Tiles\IconicTileSmall.png</File>
+    <File>body.xml</File>
     <File>Data\symptom.xml</File>
+    <File>department.xml</File>
+    <File>ico\search.png</File>
     <File>ico\健康知识.png</File>
     <File>ico\健康资讯.png</File>
     <File>ico\健康食品.png</File>

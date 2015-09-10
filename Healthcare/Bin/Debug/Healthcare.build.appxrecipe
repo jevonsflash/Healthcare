@@ -77,6 +77,9 @@
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\IconicTileSmall.png">
       <PackagePath>Assets\Tiles\IconicTileSmall.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\search.png">
+      <PackagePath>ico\search.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\健康知识.png">
       <PackagePath>ico\健康知识.png</PackagePath>
     </AppxPackagedFile>
@@ -140,8 +143,14 @@
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\UserContro.png">
       <PackagePath>Img\UserContro.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\body.xml">
+      <PackagePath>body.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Data\symptom.xml">
       <PackagePath>Data\symptom.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\department.xml">
+      <PackagePath>department.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\symptom.xml">
       <PackagePath>symptom.xml</PackagePath>

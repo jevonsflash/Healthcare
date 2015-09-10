@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DepartmentMaps>
+  <DepartmentMap>
+    <id>1</id>
+    <keywords />
+    <name>内科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>2</id>
+        <keywords />
+        <name>呼吸内科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+      <Department>
+        <id>3</id>
+        <keywords />
+        <name>消化内科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+      <Department>
+        <id>4</id>
+        <keywords />
+        <name>神经内科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+      <Department>
+        <id>5</id>
+        <keywords />
+        <name>内分泌科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+      <Department>
+        <id>6</id>
+        <keywords />
+        <name>肾内科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+      <Department>
+        <id>7</id>
+        <keywords />
+        <name>风湿科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+      <Department>
+        <id>8</id>
+        <keywords />
+        <name>血液科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+      <Department>
+        <id>9</id>
+        <keywords />
+        <name>心血管内科</name>
+        <seq>0</seq>
+        <title />
+        <department>1</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>10</id>
+    <keywords />
+    <name>外科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>11</id>
+        <keywords />
+        <name>普外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>12</id>
+        <keywords />
+        <name>心胸外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>13</id>
+        <keywords />
+        <name>肝胆外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>14</id>
+        <keywords />
+        <name>胃肠外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>15</id>
+        <keywords />
+        <name>脑外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>16</id>
+        <keywords />
+        <name>泌尿外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>17</id>
+        <keywords />
+        <name>骨科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>18</id>
+        <keywords />
+        <name>肛肠外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>19</id>
+        <keywords />
+        <name>乳腺外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>20</id>
+        <keywords />
+        <name>血管外科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>21</id>
+        <keywords />
+        <name>器官移植</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>22</id>
+        <keywords />
+        <name>烧伤科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+      <Department>
+        <id>24</id>
+        <keywords />
+        <name>外伤科</name>
+        <seq>0</seq>
+        <title />
+        <department>10</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>23</id>
+    <keywords />
+    <name>手外科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments />
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>25</id>
+    <keywords />
+    <name>妇产科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>26</id>
+        <keywords />
+        <name>妇科</name>
+        <seq>0</seq>
+        <title />
+        <department>25</department>
+      </Department>
+      <Department>
+        <id>27</id>
+        <keywords />
+        <name>产科</name>
+        <seq>0</seq>
+        <title />
+        <department>25</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>28</id>
+    <keywords />
+    <name>五官科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>29</id>
+        <keywords />
+        <name>眼科</name>
+        <seq>0</seq>
+        <title />
+        <department>28</department>
+      </Department>
+      <Department>
+        <id>30</id>
+        <keywords />
+        <name>耳鼻喉科</name>
+        <seq>0</seq>
+        <title />
+        <department>28</department>
+      </Department>
+      <Department>
+        <id>31</id>
+        <keywords />
+        <name>口腔科</name>
+        <seq>0</seq>
+        <title />
+        <department>28</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>32</id>
+    <keywords />
+    <name>皮肤性病</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>33</id>
+        <keywords />
+        <name>皮肤科</name>
+        <seq>0</seq>
+        <title />
+        <department>32</department>
+      </Department>
+      <Department>
+        <id>34</id>
+        <keywords />
+        <name>性病科</name>
+        <seq>0</seq>
+        <title />
+        <department>32</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>35</id>
+    <keywords />
+    <name>中西医结合科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>36</id>
+        <keywords />
+        <name>中医科</name>
+        <seq>0</seq>
+        <title />
+        <department>35</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>37</id>
+    <keywords />
+    <name>肝病</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>38</id>
+        <keywords />
+        <name>肝炎</name>
+        <seq>0</seq>
+        <title />
+        <department>37</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>39</id>
+    <keywords />
+    <name>精神心理科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>40</id>
+        <keywords />
+        <name>精神病科</name>
+        <seq>0</seq>
+        <title />
+        <department>39</department>
+      </Department>
+      <Department>
+        <id>41</id>
+        <keywords />
+        <name>心理咨询</name>
+        <seq>0</seq>
+        <title />
+        <department>39</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>42</id>
+    <keywords />
+    <name>儿科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>43</id>
+        <keywords />
+        <name>儿科</name>
+        <seq>0</seq>
+        <title />
+        <department>42</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>44</id>
+    <keywords />
+    <name>男科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>45</id>
+        <keywords />
+        <name>男科</name>
+        <seq>0</seq>
+        <title />
+        <department>44</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>46</id>
+    <keywords />
+    <name>生殖健康</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>47</id>
+        <keywords />
+        <name>生殖健康</name>
+        <seq>0</seq>
+        <title />
+        <department>46</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>48</id>
+    <keywords />
+    <name>肿瘤科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>49</id>
+        <keywords />
+        <name>肿瘤科</name>
+        <seq>0</seq>
+        <title />
+        <department>48</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>50</id>
+    <keywords />
+    <name>传染科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>51</id>
+        <keywords />
+        <name>传染科</name>
+        <seq>0</seq>
+        <title />
+        <department>50</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>52</id>
+    <keywords />
+    <name>老年科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>53</id>
+        <keywords />
+        <name>老年科</name>
+        <seq>0</seq>
+        <title />
+        <department>52</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>54</id>
+    <keywords />
+    <name>体检保健科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>55</id>
+        <keywords />
+        <name>体检保健科</name>
+        <seq>0</seq>
+        <title />
+        <department>54</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>56</id>
+    <keywords />
+    <name>成瘾医学科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>57</id>
+        <keywords />
+        <name>成瘾医学科</name>
+        <seq>0</seq>
+        <title />
+        <department>56</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>58</id>
+    <keywords />
+    <name>核医学科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>59</id>
+        <keywords />
+        <name>核医学科</name>
+        <seq>0</seq>
+        <title />
+        <department>58</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>60</id>
+    <keywords />
+    <name>急诊科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>61</id>
+        <keywords />
+        <name>急诊科</name>
+        <seq>0</seq>
+        <title />
+        <department>60</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+  <DepartmentMap>
+    <id>62</id>
+    <keywords />
+    <name>营养科</name>
+    <seq>0</seq>
+    <title />
+    <department>0</department>
+    <departments>
+      <Department>
+        <id>63</id>
+        <keywords />
+        <name>营养科</name>
+        <seq>0</seq>
+        <title />
+        <department>62</department>
+      </Department>
+    </departments>
+  </DepartmentMap>
+</DepartmentMaps>

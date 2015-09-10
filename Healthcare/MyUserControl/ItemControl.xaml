@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Healthcare.MyUserControl.ItemControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:Healthcare.Converter"
+             mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    <UserControl.Resources>
+        <my:ViewMoreConverter x:Key="ViewMoreConverter"></my:ViewMoreConverter>
+    </UserControl.Resources>
+        <Grid Background="AliceBlue" x:Name="ItemBlock" MaxHeight="480" MinHeight="150">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="Title" Grid.Row="0"  Foreground="Black" FontSize="48"></TextBlock>
+            <TextBlock x:Name="Content" Grid.Row="1" Grid.RowSpan="2" TextWrapping="Wrap" Foreground="Black" FontSize="32">
+            </TextBlock>
+            <Button Visibility="{Binding ElementName=ItemBlock,Path=ActualHeight, Converter={StaticResource ResourceKey=ViewMoreConverter}}" Grid.Row="2" Foreground="Black"  BorderBrush="{x:Null}" BorderThickness="0" Padding="0">
+                <TextBlock>点击查看更多</TextBlock>
+            </Button>
+        </Grid>
+</UserControl>

@@ -21,7 +21,6 @@ namespace Healthcare
         {
             InitializeComponent();
             InitBGStyle();
-
             // 用于本地化 ApplicationBar 的示例代码
             //BuildLocalizedApplicationBar();
         }
@@ -92,6 +91,10 @@ namespace Healthcare
             {
                 JMessBox jb = new JMessBox("请输入内容");
                 jb.Show();
+                string destination = "/GeneralDetailPage.xaml";
+                destination += string.Format("?id={0}", "33");
+                NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
             }
             else
             {

@@ -9,16 +9,18 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using Windows.Storage;
 
-namespace Healthcare.Helper
+namespace Healthcare.Server
 {
-    class FileHelper
+    public class MapServer
     {
-        public static async Task<List<Model.KeyWordsMap>> ReadMap()
+        public async Task<List<Model.KeyWordsMap>> ReadMap(string mapName)
         {
-            var storage = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync("symptom.xml");
+            string path = mapName + ".xml";
+            string xmlRootName = mapName + "Maps";
+            var storage = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(path);
             string readStr = await FileIO.ReadTextAsync(storage);
             XDocument xd = XDocument.Parse(readStr);
-            XmlSerializer ser = new XmlSerializer(typeof(List<Model.KeyWordsMap>), new XmlRootAttribute("SymptomMaps"));
+            XmlSerializer ser = new XmlSerializer(typeof(List<Model.KeyWordsMap>), new XmlRootAttribute(xmlRootName));
             XmlReader xr = xd.CreateReader();
             List<Model.KeyWordsMap> obs = (List<Model.KeyWordsMap>)ser.Deserialize(xr);
             return obs;

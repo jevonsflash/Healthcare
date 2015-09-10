@@ -96,22 +96,35 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\JMessBox.cs" />
-    <Compile Include="DiseaseDetailPage.xaml.cs">
-      <DependentUpon>DiseaseDetailPage.xaml</DependentUpon>
+    <Compile Include="Converter\ViewMoreConverter.cs" />
+    <Compile Include="Factory\ItemDetailFactory.cs" />
+    <Compile Include="GeneralDetailPage.xaml.cs">
+      <DependentUpon>GeneralDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneralResultPage.xaml.cs">
       <DependentUpon>GeneralResultPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Place.cs" />
+    <Compile Include="MyUserControl\ItemControl.xaml.cs">
+      <DependentUpon>ItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Server\BodyServer.cs" />
+    <Compile Include="Server\MapServer.cs" />
     <Compile Include="Helper\HttpHelper.cs" />
     <Compile Include="Helper\StaticURLHelper.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\BaseMap.cs" />
+    <Compile Include="Model\BodyMap.cs" />
+    <Compile Include="Model\CheckMap.cs" />
     <Compile Include="Model\CookShowItem.cs" />
+    <Compile Include="Model\DepartmentMap.cs" />
     <Compile Include="Model\DiseaseShowItem.cs" />
     <Compile Include="Model\DurgShowItem.cs" />
+    <Compile Include="Model\FoodMap.cs" />
     <Compile Include="Model\FoodShowItem.cs" />
     <Compile Include="Model\GeneralSieveItem.cs" />
     <Compile Include="Model\JsonResult.cs" />
@@ -126,7 +139,7 @@
     </Compile>
     <Compile Include="Server\DiseaseServer.cs" />
     <Compile Include="Server\SymptomServer.cs" />
-    <Compile Include="UserControl\JMessboxControl.xaml.cs">
+    <Compile Include="MyUserControl\JMessboxControl.xaml.cs">
       <DependentUpon>JMessboxControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -135,7 +148,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="DiseaseDetailPage.xaml">
+    <Page Include="GeneralDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,7 +164,11 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControl\JMessboxControl.xaml">
+    <Page Include="MyUserControl\ItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyUserControl\JMessboxControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -196,7 +213,10 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="body.xml" />
     <Content Include="Data\symptom.xml" />
+    <Content Include="department.xml" />
+    <Content Include="ico\search.png" />
     <Content Include="ico\健康知识.png" />
     <Content Include="ico\健康资讯.png" />
     <Content Include="ico\健康食品.png" />
