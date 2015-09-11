@@ -1,4 +1,4 @@
-﻿using DebugTools.Model;
+﻿using Healthcare.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DebugTools.Server
+namespace Healthcare.Server
 {
     public class BodyServer
     {

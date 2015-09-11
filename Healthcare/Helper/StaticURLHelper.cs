@@ -8,7 +8,7 @@ namespace Healthcare.Helper
 {
   public static  class StaticURLHelper
     {
-      public static string DiseaseSearch = "http://api.yi18.net/disease/search";
-      public static string DiseaseShow = "http://api.yi18.net/disease/show";
+      public static string DiseaseShow = "http://www.tngou.net/api/disease/show";
+      public static string SymptomShow = "http://www.tngou.net/api/symptom/show";
     }
 }

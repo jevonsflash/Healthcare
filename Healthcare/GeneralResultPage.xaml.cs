@@ -12,12 +12,13 @@ using System.Windows.Media.Imaging;
 using Healthcare.JMessbox;
 using Healthcare.Helper;
 using System.Threading.Tasks;
+using Healthcare.Server;
 
 namespace Healthcare
 {
     public partial class GeneralResultPage : PhoneApplicationPage
     {
-        private Server.DiseaseServer diseaseser = new Server.DiseaseServer();
+        private MapServer mapser = new MapServer();
         private string keyword;
         public GeneralResultPage()
             : base()
@@ -73,6 +74,7 @@ namespace Healthcare
             if (parameters.ContainsKey("keyword"))
             {
                 keyword = (parameters["keyword"] as string);
+                keyword = "出血";
 
             }
             if (!string.IsNullOrEmpty(keyword))
@@ -81,9 +83,7 @@ namespace Healthcare
                 List<Model.KeyWordsMap> result = await GetData(keyword);
                 this.Dispatcher.BeginInvoke(() =>
                 {
-
                     this.LLSResult.ItemsSource = result;
-
                 });
             }
 
@@ -124,7 +124,7 @@ namespace Healthcare
         }
         private async Task<List<Model.KeyWordsMap>> GetData(string keyword)
         {
-            List<Model.KeyWordsMap> list = await FileHelper.ReadMap();
+            List<Model.KeyWordsMap> list = await mapser.ReadMap("Symptom");
             List<Model.KeyWordsMap> result = list.FindAll(c => c.keywords.Contains(keyword));
             return result;
         }

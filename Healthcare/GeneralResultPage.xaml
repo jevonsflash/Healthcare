@@ -39,7 +39,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
-                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="80"/>
                 <RowDefinition Height="*"></RowDefinition>
                 
             </Grid.RowDefinitions>
@@ -48,17 +48,17 @@
                     <TextBox x:Name="TBMainSearch"
 						HorizontalAlignment="Left"
 						Text="TextBox" 
-						Width="456" 
+						Width="333" 
 						Style="{StaticResource TextBoxStyle1}" 
 						GotFocus="TBMainSearch_GotFocus" LostFocus="TBMainSearch_LostFocus" 
 						SelectionForeground="{StaticResource PhoneForegroundBrush}"
 						Foreground="{StaticResource PhoneForegroundBrush}" Loaded="TBMainSearch_Loaded"/>
                 </Border>
-
+                <Button x:Name="BTNSearch" Click="BTNSearch_Click" Content="Button"  HorizontalAlignment="Right"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate2}" Width="100"/>
             </Grid>
-            <Grid Grid.Row="1" >
-                <Button x:Name="BTNSearch" Click="BTNSearch_Click" Content="Button"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" />
-            </Grid>
+            <StackPanel>
+                
+            </StackPanel>
             <phone:LongListSelector 
                 x:Name="LLSResult" 
                 Grid.Row="2" SelectionChanged="LLSResult_SelectionChanged"

@@ -10,14 +10,12 @@ using Microsoft.Phone.Shell;
 
 namespace Healthcare
 {
-    public partial class DiseaseDetailPage : PhoneApplicationPage
+    public partial class GeneralDetailPage : PhoneApplicationPage
     {
-        private Server.DiseaseServer diseaseser = new Server.DiseaseServer();
-        private Model.DiseaseShowItem diseaseShow = new Model.DiseaseShowItem();
 
         private string idStr;
 
-        public DiseaseDetailPage()
+        public GeneralDetailPage()
         {
             InitializeComponent();
         }
@@ -33,7 +31,7 @@ namespace Healthcare
             }
             if (!string.IsNullOrEmpty(idStr))
             {
-                string url = Helper.StaticURLHelper.DiseaseShow;
+                string url = Helper.StaticURLHelper.SymptomShow;
                 GetData(url, idStr);
             }
         }
@@ -49,7 +47,22 @@ namespace Healthcare
 
         void ht_FileWatchEvent(object sender, CompleteEventArgs e)
         {
+            Dictionary<string, string> DicItem = new Dictionary<string, string>();
+            DicItem = Factory.ItemDetailFactory.GetContent("symptom", e.Node);
+            if (DicItem.Count > 0)
+            {
 
+                foreach (var item in DicItem)
+                {
+                    this.Dispatcher.BeginInvoke(() =>
+                    {
+                        MyUserControl.ItemControl oItem = new MyUserControl.ItemControl();
+                        oItem.Title.Text = item.Key;
+                        oItem.Content.Text = item.Value;
+                        this.SPContentArea.Children.Add(oItem);
+                    });
+                }
+            }
         }
 
     }
