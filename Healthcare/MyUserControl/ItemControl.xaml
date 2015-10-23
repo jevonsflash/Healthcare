@@ -12,17 +12,18 @@
     <UserControl.Resources>
         <my:ViewMoreConverter x:Key="ViewMoreConverter"></my:ViewMoreConverter>
     </UserControl.Resources>
-        <Grid Background="AliceBlue" x:Name="ItemBlock" MaxHeight="480" MinHeight="150">
+        <Grid Background="White" Opacity="0.8" x:Name="ItemBlock" MaxHeight="480" MinHeight="150">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition ></RowDefinition>
                 <RowDefinition Height="80"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="Title" Grid.Row="0"  Foreground="Black" FontSize="48"></TextBlock>
-            <TextBlock x:Name="Content" Grid.Row="1" Grid.RowSpan="2" TextWrapping="Wrap" Foreground="Black" FontSize="32">
+            <Rectangle Margin="0,0,450,0" Fill="Green"/>
+            <TextBlock x:Name="Title" Grid.Row="0"  Foreground="Black" FontSize="48" Margin="35,0,10,0"></TextBlock>
+            <TextBlock x:Name="Content" Grid.Row="1" TextWrapping="Wrap" Foreground="Black" FontSize="32" Margin="35,0,10,0">
             </TextBlock>
-            <Button Visibility="{Binding ElementName=ItemBlock,Path=ActualHeight, Converter={StaticResource ResourceKey=ViewMoreConverter}}" Grid.Row="2" Foreground="Black"  BorderBrush="{x:Null}" BorderThickness="0" Padding="0">
+            <ToggleButton x:Name="BTNMore"  Visibility="Collapsed" Grid.Row="2" Foreground="Black"  BorderBrush="{x:Null}" BorderThickness="0" Padding="0" Click="BTNMore_Click">
                 <TextBlock>点击查看更多</TextBlock>
-            </Button>
+            </ToggleButton>
         </Grid>
 </UserControl>

@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Healthcare
+namespace Healthcare.Helper
 {
 
     public class HttpHelper

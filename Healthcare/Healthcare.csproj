@@ -97,19 +97,41 @@
     </Compile>
     <Compile Include="Common\JMessBox.cs" />
     <Compile Include="Converter\ViewMoreConverter.cs" />
-    <Compile Include="Factory\ItemDetailFactory.cs" />
+    <Compile Include="Helper\DeserializeHelper.cs" />
+    <Compile Include="Helper\FilterHelper.cs" />
+    <Compile Include="Helper\ItemDetailHelper.cs" />
     <Compile Include="GeneralDetailPage.xaml.cs">
       <DependentUpon>GeneralDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneralResultPage.xaml.cs">
       <DependentUpon>GeneralResultPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\CheckShowItem.cs" />
     <Compile Include="Model\Department.cs" />
-    <Compile Include="Model\Place.cs" />
+    <Compile Include="Model\DrugShowItem.cs" />
+    <Compile Include="Model\HospitalMap.cs" />
+    <Compile Include="Model\HospitalShowItem.cs" />
+    <Compile Include="Model\InfoMap.cs" />
+    <Compile Include="Model\InfoShowItem.cs" />
+    <Compile Include="Model\LoreShowItem.cs" />
+    <Compile Include="Model\OperationShowItem.cs" />
+    <Compile Include="Model\StoreShowItem.cs" />
+    <Compile Include="MyUserControl\FilterSelectorControl.xaml.cs">
+      <DependentUpon>FilterSelectorControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControl\ItemControl.xaml.cs">
       <DependentUpon>ItemControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Server\BodyServer.cs" />
+    <Compile Include="MyUserControl\MsgBoxControl.xaml.cs">
+      <DependentUpon>MsgBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Server\FilterServer.cs" />
+    <Compile Include="Server\CheckServer.cs" />
+    <Compile Include="Server\DrugServer.cs" />
+    <Compile Include="Server\FoodServer.cs" />
+    <Compile Include="Server\HospitalServer.cs" />
+    <Compile Include="Server\InfoServer.cs" />
+    <Compile Include="Server\LoreServer.cs" />
     <Compile Include="Server\MapServer.cs" />
     <Compile Include="Helper\HttpHelper.cs" />
     <Compile Include="Helper\StaticURLHelper.cs" />
@@ -118,15 +140,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\BaseMap.cs" />
-    <Compile Include="Model\BodyMap.cs" />
-    <Compile Include="Model\CheckMap.cs" />
     <Compile Include="Model\CookShowItem.cs" />
-    <Compile Include="Model\DepartmentMap.cs" />
     <Compile Include="Model\DiseaseShowItem.cs" />
-    <Compile Include="Model\DurgShowItem.cs" />
-    <Compile Include="Model\FoodMap.cs" />
     <Compile Include="Model\FoodShowItem.cs" />
-    <Compile Include="Model\GeneralSieveItem.cs" />
+    <Compile Include="Model\FilterMap.cs" />
     <Compile Include="Model\JsonResult.cs" />
     <Compile Include="Model\KeyWordsMap.cs" />
     <Compile Include="Model\NewsShowItem.cs" />
@@ -138,6 +155,8 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Server\DiseaseServer.cs" />
+    <Compile Include="Server\OperationServer.cs" />
+    <Compile Include="Server\StoreServer.cs" />
     <Compile Include="Server\SymptomServer.cs" />
     <Compile Include="MyUserControl\JMessboxControl.xaml.cs">
       <DependentUpon>JMessboxControl.xaml</DependentUpon>
@@ -164,6 +183,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MyUserControl\FilterSelectorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyUserControl\ItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +194,10 @@
     <Page Include="MyUserControl\JMessboxControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\MsgBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +243,7 @@
     <Content Include="body.xml" />
     <Content Include="Data\symptom.xml" />
     <Content Include="department.xml" />
+    <Content Include="disease.xml" />
     <Content Include="ico\search.png" />
     <Content Include="ico\健康知识.png" />
     <Content Include="ico\健康资讯.png" />

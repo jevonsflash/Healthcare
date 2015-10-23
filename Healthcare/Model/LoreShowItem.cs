@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Healthcare.Model
 {
-    public class BaseMap
+    public class LoreShowItem
     {
+        public int count { get; set; }
         public string description { get; set; }
+        public int fcount { get; set; }
         public int id { get; set; }
+        public string img { get; set; }
         public string keywords { get; set; }
-        public string name { get; set; }
-        public int seq { get; set; }
+        public int loreclass { get; set; }
+        public int rcount { get; set; }
+        public long time { get; set; }
         public string title { get; set; }
-        public int ext { get; set; }
-        public List<BaseMap> BaseMaps { get; set; }
     }
 }

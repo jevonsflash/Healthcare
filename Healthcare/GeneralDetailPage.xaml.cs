@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Healthcare.Helper;
 
 namespace Healthcare
 {
@@ -14,6 +15,7 @@ namespace Healthcare
     {
 
         private string idStr;
+        private string type;
 
         public GeneralDetailPage()
         {
@@ -29,9 +31,15 @@ namespace Healthcare
                 idStr = (parameters["id"] as string);
 
             }
+            if (parameters.ContainsKey("type"))
+            {
+                type = (parameters["type"] as string);
+
+            }
+
             if (!string.IsNullOrEmpty(idStr))
             {
-                string url = Helper.StaticURLHelper.SymptomShow;
+                string url = StaticURLHelper.GetURL(type)[0];
                 GetData(url, idStr);
             }
         }
@@ -48,7 +56,7 @@ namespace Healthcare
         void ht_FileWatchEvent(object sender, CompleteEventArgs e)
         {
             Dictionary<string, string> DicItem = new Dictionary<string, string>();
-            DicItem = Factory.ItemDetailFactory.GetContent("symptom", e.Node);
+            DicItem = ItemDetailHelper.GetContent(type, e.Node);
             if (DicItem.Count > 0)
             {
 
@@ -57,14 +65,37 @@ namespace Healthcare
                     this.Dispatcher.BeginInvoke(() =>
                     {
                         MyUserControl.ItemControl oItem = new MyUserControl.ItemControl();
-                        oItem.Title.Text = item.Key;
-                        oItem.Content.Text = item.Value;
+                        string title = item.Key;
+                        string content = string.Empty;
+                        if (item.Value == null || item.Value == "")
+                        {
+                            content = "暂无信息";
+                        }
+                        else
+                        {
+                            content = item.Value.Replace("<p>", string.Empty).Replace("</p>", "\n");
+
+                        }
+                        oItem.Title.Text = title;
+                        oItem.Content.Text = content;
+                        if (content.Count() > 100)
+                        {
+                            oItem.BTNMore.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            oItem.BTNMore.Visibility = Visibility.Collapsed;
+                        }
                         this.SPContentArea.Children.Add(oItem);
                     });
                 }
             }
         }
 
+        private void BTNBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 
 }

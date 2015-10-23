@@ -41,3 +41,5 @@ D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\ProjectArchitectures.txt
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MDILProjectFiles.xml
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\XapCacheFile.xml
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\Healthcare.csprojResolveAssemblyReference.cache
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MyUserControl\FilterSelectorControl.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MyUserControl\MsgBoxControl.g.cs

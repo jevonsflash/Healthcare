@@ -1,0 +1,47 @@
+﻿<UserControl xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"  x:Class="Healthcare.MyUserControl.FilterSelectorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Title" Grid.Row="0"  Foreground="Black" FontSize="48" Margin="35,0,10,0">
+            请选择
+        </TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <ListBox x:Name="LBSelector1" Grid.Column="0" SelectionChanged="LBSelector1_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=name}" Foreground="Black" Margin="32 10" FontSize="32"></TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox x:Name="LBSelector2" Grid.Column="1" SelectionChanged="LBSelector2_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=name}" Foreground="Black" Margin="32 10" FontSize="32"></TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+        <Button x:Name="BTNMore" Grid.Row="2" Foreground="Black"  BorderBrush="{x:Null}" BorderThickness="0" Padding="0" Click="BTNMore_Click">
+            <TextBlock>取消</TextBlock>
+        </Button>
+    </Grid>
+</UserControl>

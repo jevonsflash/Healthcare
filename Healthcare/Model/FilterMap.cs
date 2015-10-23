@@ -8,8 +8,9 @@ using Newtonsoft.Json.Linq;
 namespace Healthcare.Model
 {
 
-    public class GeneralSieveItem
+    public class FilterMap
     {
+        public string title { get; set; }
         public string name { get; set; }
         public int id { get; set; }
     }

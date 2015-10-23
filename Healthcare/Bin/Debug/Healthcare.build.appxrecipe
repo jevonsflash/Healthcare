@@ -152,6 +152,9 @@
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\department.xml">
       <PackagePath>department.xml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\disease.xml">
+      <PackagePath>disease.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\symptom.xml">
       <PackagePath>symptom.xml</PackagePath>
     </AppxPackagedFile>

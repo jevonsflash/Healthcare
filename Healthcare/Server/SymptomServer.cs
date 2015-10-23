@@ -57,7 +57,7 @@ namespace Healthcare.Server
             string causetext = item["causetext"].ToString() ?? "";
             string checks = item["checks"].ToString() ?? "";
             string drug = item["drug"].ToString() ?? "";
-            string detailtext = item["detailtext"].ToString() ?? "";
+            //string detailtext = item["detailtext"].ToString() ?? "";
 
             oSymptomShowItem.id = id;
             oSymptomShowItem.count = count;
@@ -66,15 +66,14 @@ namespace Healthcare.Server
             oSymptomShowItem.keywords = keywords;
             oSymptomShowItem.name = name;
             oSymptomShowItem.img = img;
-            oSymptomShowItem.keywords = keywords; ;
-            oSymptomShowItem.description = description; ;
+            oSymptomShowItem.description = description; 
             oSymptomShowItem.department = department;
             oSymptomShowItem.place = place;
             oSymptomShowItem.message = message;
             oSymptomShowItem.disease = disease;
             oSymptomShowItem.causetext = causetext;
             oSymptomShowItem.drug = drug;
-            oSymptomShowItem.detailtext = detailtext;
+            //oSymptomShowItem.detailtext = detailtext;
             oSymptomShowItem.checks = checks;
 
             return oSymptomShowItem;

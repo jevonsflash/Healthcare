@@ -91,15 +91,11 @@ namespace Healthcare
             {
                 JMessBox jb = new JMessBox("请输入内容");
                 jb.Show();
-                string destination = "/GeneralDetailPage.xaml";
-                destination += string.Format("?id={0}", "33");
-                NavigationService.Navigate(new Uri(destination, UriKind.Relative));
-
             }
             else
             {
                 string destination = "/GeneralResultPage.xaml";
-                destination += string.Format("?keyword={0}", this.TBMainSearch.Text);
+                destination += string.Format("?keyword={0}&type={1}", this.TBMainSearch.Text,"Symptom");
                 NavigationService.Navigate(new Uri(destination, UriKind.Relative));
             }
 

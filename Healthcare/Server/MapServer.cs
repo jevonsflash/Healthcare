@@ -13,7 +13,7 @@ namespace Healthcare.Server
 {
     public class MapServer
     {
-        public async Task<List<Model.KeyWordsMap>> ReadMap(string mapName)
+        public async Task<List<Model.KeyWordsMap>> ReadKeywordsMap(string mapName)
         {
             string path = mapName + ".xml";
             string xmlRootName = mapName + "Maps";
@@ -25,6 +25,18 @@ namespace Healthcare.Server
             List<Model.KeyWordsMap> obs = (List<Model.KeyWordsMap>)ser.Deserialize(xr);
             return obs;
         }
+        public async Task<List<Model.BaseMap>> ReadFilterMap(string mapName)
+        {
+            string path = mapName + ".xml";
+            string xmlRootName = mapName + "Maps";
+            var storage = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(path);
+            string readStr = await FileIO.ReadTextAsync(storage);
 
+            XDocument xd = XDocument.Parse(readStr);
+            XmlSerializer ser = new XmlSerializer(typeof(List<Model.BaseMap>), new XmlRootAttribute(xmlRootName));
+            XmlReader xr = xd.CreateReader();
+            List<Model.BaseMap> obs = (List<Model.BaseMap>)ser.Deserialize(xr);
+            return obs;
+        }
     }
 }

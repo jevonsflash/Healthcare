@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Healthcare.Model
 {
-    public class CheckMap : BaseMap
+    public class HospitalMap : BaseMap
     {
     }
 }

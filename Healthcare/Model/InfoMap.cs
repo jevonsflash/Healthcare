@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Healthcare.Model
 {
-    public class DepartmentMap : BaseMap
+    public class InfoMap : BaseMap
     {
-        public int department { get; set; }
-        public List<Department> departments { get; set; }
     }
 }

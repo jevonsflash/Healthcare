@@ -18,6 +18,7 @@
     <File>body.xml</File>
     <File>Data\symptom.xml</File>
     <File>department.xml</File>
+    <File>disease.xml</File>
     <File>ico\search.png</File>
     <File>ico\健康知识.png</File>
     <File>ico\健康资讯.png</File>

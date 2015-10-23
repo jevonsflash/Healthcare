@@ -13,13 +13,18 @@ using Healthcare.JMessbox;
 using Healthcare.Helper;
 using System.Threading.Tasks;
 using Healthcare.Server;
+using Healthcare.Model;
 
 namespace Healthcare
 {
     public partial class GeneralResultPage : PhoneApplicationPage
     {
         private MapServer mapser = new MapServer();
+        private int filterNum;
         private string keyword;
+        private string type;
+        private MyUserControl.FilterSelectorControl oItem;
+
         public GeneralResultPage()
             : base()
         {
@@ -28,12 +33,7 @@ namespace Healthcare
 
         }
 
-
         #region 事件
-
-
-
-
 
         private void TBMainSearch_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -52,16 +52,17 @@ namespace Healthcare
 
         }
 
-        private void BTNSearch_Click(object sender, RoutedEventArgs e)
+        private async void BTNSearch_Click(object sender, RoutedEventArgs e)
         {
-
+            keyword = this.TBMainSearch.Text;
+            await Render();
         }
 
         private void LLSResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string idStr = ((sender as LongListSelector).SelectedItem as Model.KeyWordsMap).id.ToString();
             string destination = "/GeneralDetailPage.xaml";
-            destination += string.Format("?id={0}", idStr);
+            destination += string.Format("?id={0}&type={1}", idStr, type);
             NavigationService.Navigate(new Uri(destination, UriKind.Relative));
         }
 
@@ -70,22 +71,125 @@ namespace Healthcare
 
             base.OnNavigatedTo(e);
             IDictionary<string, string> parameters = this.NavigationContext.QueryString;
-
+            if (parameters.ContainsKey("type"))
+            {
+                type = (parameters["type"] as string);
+            }
             if (parameters.ContainsKey("keyword"))
             {
                 keyword = (parameters["keyword"] as string);
-                keyword = "出血";
-
             }
             if (!string.IsNullOrEmpty(keyword))
             {
-
-                List<Model.KeyWordsMap> result = await GetData(keyword);
-                this.Dispatcher.BeginInvoke(() =>
-                {
-                    this.LLSResult.ItemsSource = result;
-                });
+                this.TBMainSearch.Text = keyword;
+                await Render();
             }
+
+        }
+
+        private async Task Render()
+        {
+            List<Model.KeyWordsMap> result = await GetData(keyword);
+            if (result.Count == 0)
+            {
+                this.MsgBox.Visibility = Visibility.Visible;
+                this.MsgBox.TBMessage.Text = string.Format("找不到内容：{0}", keyword);
+            }
+            else
+            {
+                this.MsgBox.Visibility = Visibility.Collapsed;
+            }
+            this.Dispatcher.BeginInvoke(() =>
+            {
+                this.LLSResult.ItemsSource = result;
+                InitFilterButton("", "");
+            });
+        }
+        private void BTNMore_Click(object sender, RoutedEventArgs e)
+        {
+            if ((Application.Current.RootVisual as PhoneApplicationFrame) != null)
+            {
+                (Application.Current.RootVisual as PhoneApplicationFrame).RemoveBackEntry();
+            }
+            string destination = "/GeneralResultPage.xaml";
+            destination += string.Format("?keyword={0}&type={1}", keyword, "Disease");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+        }
+
+        private void BTNBack_Click(object sender, RoutedEventArgs e)
+        {
+            if ((Application.Current.RootVisual as PhoneApplicationFrame) != null)
+            {
+                (Application.Current.RootVisual as PhoneApplicationFrame).RemoveBackEntry();
+            }
+            string destination = "/MainPage.xaml";
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+        }
+        private async void BTNFilter_Click(object sender, RoutedEventArgs e)
+        {
+            filterNum = 0;
+            List<BaseMap> list = await mapser.ReadFilterMap(FilterHelper.GetFilterName(type)[0].Split('|')[0]);
+            InitFilterControl(list);
+        }
+        private async void BTNFilter2_Click(object sender, RoutedEventArgs e)
+        {
+            filterNum = 1;
+            List<BaseMap> list = await mapser.ReadFilterMap(FilterHelper.GetFilterName(type)[1].Split('|')[0]);
+            InitFilterControl(list);
+        }
+
+
+        private void OItem_OnData2Changed(object sender, SelectionChangedEventArgs e)
+        {
+            string id = ((sender as ListBox).SelectedItem as BaseMap).id.ToString();
+            string name = ((sender as ListBox).SelectedItem as BaseMap).name;
+            HttpHelper ht = new HttpHelper();
+            string url = StaticURLHelper.GetURL(type)[1];
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("id", id);
+            ht.CreatePostHttpResponse(url, dic);
+            ht.FileWatchEvent += Ht_FileWatchEvent;
+            this.LayoutRoot.Children.Remove(oItem);
+            if (filterNum == 0)
+            {
+                InitFilterButton(name, "");
+            }
+            else if (filterNum == 1)
+            {
+                InitFilterButton("", name);
+            }
+
+        }
+
+        private void Ht_FileWatchEvent(object sender, CompleteEventArgs e)
+        {
+            List<Model.KeyWordsMap> result = GetData(keyword, e.Node);
+
+
+            this.Dispatcher.BeginInvoke(() =>
+            {
+                if (result.Count == 0)
+                {
+                    this.MsgBox.Visibility = Visibility.Visible;
+                    this.MsgBox.TBMessage.Text = string.Format("找不到内容：{0}", keyword);
+                }
+                else
+                {
+                    this.MsgBox.Visibility = Visibility.Collapsed;
+                }
+                this.LLSResult.ItemsSource = result;
+            });
+
+        }
+
+        private void OItem_OnData1Changed(object sender, SelectionChangedEventArgs e)
+        {
+            List<BaseMap> subList = ((sender as ListBox).SelectedItem as BaseMap).BaseMaps;
+
+        }
+        private void OItem_OnCancel(object sender, RoutedEventArgs e)
+        {
+            this.LayoutRoot.Children.Remove(oItem);
 
         }
 
@@ -122,16 +226,54 @@ namespace Healthcare
             ib01.Opacity = 10;
             this.LayoutRoot.Background = ib01;
         }
-        private async Task<List<Model.KeyWordsMap>> GetData(string keyword)
+        private void InitFilterControl(List<BaseMap> list)
         {
-            List<Model.KeyWordsMap> list = await mapser.ReadMap("Symptom");
-            List<Model.KeyWordsMap> result = list.FindAll(c => c.keywords.Contains(keyword));
-            return result;
+            oItem = new MyUserControl.FilterSelectorControl(list);
+
+            oItem.OnData1Changed += OItem_OnData1Changed;
+            oItem.OnData2Changed += OItem_OnData2Changed;
+            oItem.OnCancel += OItem_OnCancel;
+            this.LayoutRoot.Children.Add(oItem);
+            Grid.SetRow(oItem, 1);
+            this.Dispatcher.BeginInvoke(() =>
+            {
+                oItem.LBSelector1.Items.Clear();
+                oItem.LBSelector1.ItemsSource = list;
+            });
         }
 
+        private void InitFilterButton(string content1, string content2)
+        {
+            this.BTNFilter.Content = string.Format("{0}:{1}", FilterHelper.GetFilterName(type)[0].Split('|')[1], string.IsNullOrEmpty(content1) ? "全部" : content1);
+            this.BTNFilter2.Content = string.Format("{0}:{1}", FilterHelper.GetFilterName(type)[1].Split('|')[1], string.IsNullOrEmpty(content2) ? "全部" : content2);
+        }
 
+        private async Task<List<Model.KeyWordsMap>> GetData(string keyword)
+        {
+            List<Model.KeyWordsMap> list = await mapser.ReadKeywordsMap(type);
+            if (string.IsNullOrEmpty(keyword))
+            {
+                return list;
+            }
+            else
+            {
+                return list.FindAll(c => c.keywords.Contains(keyword));
+            }
+
+        }
+        private List<Model.KeyWordsMap> GetData(string keyword, string jsonStr)
+        {
+            List<KeyWordsMap> list = DeserializeHelper.GetMap(type, jsonStr);
+            if (string.IsNullOrEmpty(keyword))
+            {
+                return list;
+            }
+            else
+            {
+                return list.FindAll(c => c.keywords.Contains(keyword));
+            }
+        }
         #endregion
-
 
     }
 }
