@@ -30,7 +30,6 @@ namespace Healthcare
         {
             InitializeComponent();
             InitBGStyle();
-
         }
 
         #region 事件
@@ -69,7 +68,6 @@ namespace Healthcare
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
 
-            base.OnNavigatedTo(e);
             IDictionary<string, string> parameters = this.NavigationContext.QueryString;
             if (parameters.ContainsKey("type"))
             {
@@ -79,11 +77,10 @@ namespace Healthcare
             {
                 keyword = (parameters["keyword"] as string);
             }
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                this.TBMainSearch.Text = keyword;
-                await Render();
-            }
+            this.TBMainSearch.Text = keyword;
+            await Render();
+
+            base.OnNavigatedTo(e);
 
         }
 
@@ -127,12 +124,20 @@ namespace Healthcare
         }
         private async void BTNFilter_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(FilterHelper.GetFilterName(type)[0]) || string.IsNullOrEmpty(FilterHelper.GetFilterName(type)[1]))
+            {
+                return;
+            }
             filterNum = 0;
             List<BaseMap> list = await mapser.ReadFilterMap(FilterHelper.GetFilterName(type)[0].Split('|')[0]);
             InitFilterControl(list);
         }
         private async void BTNFilter2_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(FilterHelper.GetFilterName(type)[0]) || string.IsNullOrEmpty(FilterHelper.GetFilterName(type)[1]))
+            {
+                return;
+            }
             filterNum = 1;
             List<BaseMap> list = await mapser.ReadFilterMap(FilterHelper.GetFilterName(type)[1].Split('|')[0]);
             InitFilterControl(list);
@@ -244,8 +249,22 @@ namespace Healthcare
 
         private void InitFilterButton(string content1, string content2)
         {
-            this.BTNFilter.Content = string.Format("{0}:{1}", FilterHelper.GetFilterName(type)[0].Split('|')[1], string.IsNullOrEmpty(content1) ? "全部" : content1);
-            this.BTNFilter2.Content = string.Format("{0}:{1}", FilterHelper.GetFilterName(type)[1].Split('|')[1], string.IsNullOrEmpty(content2) ? "全部" : content2);
+            if (string.IsNullOrEmpty(FilterHelper.GetFilterName(type)[0]))
+            {
+                this.BTNFilter.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.BTNFilter.Content = string.Format("{0}:{1}", FilterHelper.GetFilterName(type)[0].Split('|')[1], string.IsNullOrEmpty(content1) ? "全部" : content1);
+            }
+            if (string.IsNullOrEmpty(FilterHelper.GetFilterName(type)[1]))
+            {
+                this.BTNFilter2.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.BTNFilter2.Content = string.Format("{0}:{1}", FilterHelper.GetFilterName(type)[1].Split('|')[1], string.IsNullOrEmpty(content2) ? "全部" : content2);
+            }
         }
 
         private async Task<List<Model.KeyWordsMap>> GetData(string keyword)

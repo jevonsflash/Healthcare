@@ -106,6 +106,10 @@
     <Compile Include="GeneralResultPage.xaml.cs">
       <DependentUpon>GeneralResultPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\TimeHelper.cs" />
+    <Compile Include="InfoDetailPage.xaml.cs">
+      <DependentUpon>InfoDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\CheckShowItem.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\DrugShowItem.cs" />
@@ -175,6 +179,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="InfoDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -241,9 +249,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="body.xml" />
+    <Content Include="check.xml" />
     <Content Include="Data\symptom.xml" />
     <Content Include="department.xml" />
     <Content Include="disease.xml" />
+    <Content Include="food.xml" />
     <Content Include="ico\search.png" />
     <Content Include="ico\健康知识.png" />
     <Content Include="ico\健康资讯.png" />
@@ -267,6 +277,7 @@
     <Content Include="Img\thumb\thumb_matopeace.jpg" />
     <Content Include="Img\thumb\thumb_metro.png" />
     <Content Include="Img\UserContro.png" />
+    <Content Include="operation.xml" />
     <Content Include="symptom.xml" />
   </ItemGroup>
   <ItemGroup>

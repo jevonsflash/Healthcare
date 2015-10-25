@@ -43,24 +43,28 @@ namespace Healthcare.Server
             int count = int.Parse(item["count"].ToString());
             int rcount = int.Parse(item["rcount"].ToString());
             int fcount = int.Parse(item["fcount"].ToString());
+            int id = int.Parse(item["id"].ToString());
+
             string name = item["name"].ToString() ?? "";
             string img = item["img"].ToString() ?? "";
             string food = item["food"].ToString() ?? "";
-            string images = item["images"].ToString() ?? "";
             string description = item["description"].ToString() ?? "";
             string keywords = item["keywords"].ToString() ?? "";
-            string message = item["message"].ToString() ?? "";
+            string summary = item["summary"].ToString() ?? "";
+            string disease = item["disease"].ToString() ?? "";
 
+            oFoodShowItem.id = id;
             oFoodShowItem.count = count;
             oFoodShowItem.rcount = rcount;
             oFoodShowItem.fcount = fcount;
             oFoodShowItem.name = name;//名称
             oFoodShowItem.img = img;//图片
             oFoodShowItem.food = food;//食物
-            oFoodShowItem.images = images;//图片, 
+            oFoodShowItem.img = img;//图片, 
             oFoodShowItem.description = description;//描述
             oFoodShowItem.keywords = keywords;//关键字
-            oFoodShowItem.message = message;//资讯内容
+            oFoodShowItem.summary = summary;//资讯内容
+            oFoodShowItem.disease = disease;
 
             return oFoodShowItem;
         }

@@ -32,8 +32,13 @@ namespace Healthcare.Server
         }
         public Model.InfoShowItem InfoObjectDeserializer(string jsonStr)
         {
+            InfoShowItem temp = new InfoShowItem();
             JToken ja = (JToken)JsonConvert.DeserializeObject(jsonStr);
-            return JTokenToModel(ja);
+            string message = ja["message"].ToString() ?? "";
+            temp = JTokenToModel(ja);
+            temp.message = message;
+            return temp;
+
 
         }
 

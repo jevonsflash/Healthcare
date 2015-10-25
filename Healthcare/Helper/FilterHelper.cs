@@ -15,6 +15,9 @@ namespace Healthcare.Helper
             switch (typeName)
             {
                 case "Symptom":
+                case "Disease":
+                case "Check":
+                case "Operation":
                     result[0] = "Body|部位";
                     result[1] = "Department|科室";
                     break;

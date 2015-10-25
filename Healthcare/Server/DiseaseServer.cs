@@ -12,7 +12,7 @@ namespace Healthcare.Server
 {
     public class DiseaseServer
     {
-        public IList<Model.DiseaseShowItem> DiseaseShowDeserializer(string jsonStr)
+        public IList<Model.DiseaseShowItem> DiseaseListDeserializer(string jsonStr)
         {
             int total = 0;
             List<Model.DiseaseShowItem> diseaseShowItemModelList = new List<Model.DiseaseShowItem>();

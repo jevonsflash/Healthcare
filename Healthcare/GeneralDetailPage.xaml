@@ -14,7 +14,7 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
     <!--LayoutRoot 是包含所有页面内容的根网格-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>

@@ -1,6 +1,6 @@
-﻿<xapCache source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Healthcare_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2015/10/23 22:50:23">
-  <file source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="2015/10/23 22:43:05" />
-  <file source="D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\Healthcare.dll" archivePath="Healthcare.dll" lastWriteTime="2015/10/23 22:50:20" />
+﻿<xapCache source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Healthcare_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2015/10/25 23:27:59">
+  <file source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="2015/10/25 23:06:40" />
+  <file source="D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\Healthcare.dll" archivePath="Healthcare.dll" lastWriteTime="2015/10/25 23:27:56" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2015/7/18 16:27:27" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="2015/7/18 16:27:27" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="2015/7/18 16:27:27" />
@@ -14,9 +14,11 @@
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="2015/7/18 16:27:27" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="2015/7/18 16:27:27" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\body.xml" archivePath="body.xml" lastWriteTime="2015/10/22 21:40:05" />
+  <file source="D:\Project\C#\test\Healthcare\Healthcare\check.xml" archivePath="check.xml" lastWriteTime="2015/10/24 15:37:44" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Data\symptom.xml" archivePath="Data\symptom.xml" lastWriteTime="2015/9/9 19:39:58" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\department.xml" archivePath="department.xml" lastWriteTime="2015/10/23 21:32:07" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\disease.xml" archivePath="disease.xml" lastWriteTime="2015/10/20 19:57:03" />
+  <file source="D:\Project\C#\test\Healthcare\Healthcare\food.xml" archivePath="food.xml" lastWriteTime="2015/10/25 23:06:28" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\ico\search.png" archivePath="ico\search.png" lastWriteTime="2015/9/10 23:45:52" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\ico\健康知识.png" archivePath="ico\健康知识.png" lastWriteTime="2015/7/19 14:11:32" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\ico\健康资讯.png" archivePath="ico\健康资讯.png" lastWriteTime="2015/7/19 14:11:32" />
@@ -40,6 +42,7 @@
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_matopeace.jpg" archivePath="Img\thumb\thumb_matopeace.jpg" lastWriteTime="2015/7/19 10:54:12" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_metro.png" archivePath="Img\thumb\thumb_metro.png" lastWriteTime="2015/7/19 10:54:12" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Img\UserContro.png" archivePath="Img\UserContro.png" lastWriteTime="2015/7/19 10:54:12" />
+  <file source="D:\Project\C#\test\Healthcare\Healthcare\operation.xml" archivePath="operation.xml" lastWriteTime="2015/10/25 21:59:49" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\symptom.xml" archivePath="symptom.xml" lastWriteTime="2015/9/9 22:00:53" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2015/10/22 21:46:05" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2015/7/18 16:27:27" />
@@ -48,6 +51,6 @@
   <file source="D:\Project\C#\test\Healthcare\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="2015/7/18 22:29:57" />
   <file source="D:\Project\C#\test\Healthcare\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.xml" archivePath="Newtonsoft.Json.xml" lastWriteTime="2015/7/18 22:29:57" />
   <file source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2015/10/22 21:46:05" />
-  <file source="D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2015/10/23 22:50:22" />
-  <file source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2015/10/23 22:43:05" />
+  <file source="D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2015/10/25 23:27:58" />
+  <file source="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2015/10/25 23:06:40" />
 </xapCache>

@@ -21,7 +21,7 @@ namespace Healthcare.MyUserControl
         {
             if ((bool)this.BTNMore.IsChecked)
             {
-                this.ItemBlock.MaxHeight = double.MaxValue;
+                this.ItemBlock.MaxHeight = 4800;
             }
             else
             {
