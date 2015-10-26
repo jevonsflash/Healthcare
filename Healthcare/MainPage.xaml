@@ -20,7 +20,36 @@
     <!--LayoutRoot 是包含所有页面内容的根网格-->
     <!--LayoutRoot 是包含所有页面内容的根网格-->
     <phone:Panorama x:Name="PanoramaMain">
+        <phone:PanoramaItem Header="健康资讯">
+            <ListBox x:Name="LBInfo" SelectionChanged="LBInfo_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="24,10" Width="375">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="86"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" FontSize="26.667" TextWrapping="Wrap" Text="{Binding Path=title}" VerticalAlignment="Bottom"></TextBlock>
+                            <Grid Grid.Row="1" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="135"></ColumnDefinition>
+                                    <ColumnDefinition Width="135"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=time}"></TextBlock>
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}">
+                                    阅读:<Run Text="{Binding Path=count}"></Run>
+                                </TextBlock>
+                                <TextBlock Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource PhoneTextSubtleStyle}">
+                                    评论:<Run Text="{Binding Path=rcount}"></Run>
+                                </TextBlock>
 
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </phone:PanoramaItem>
         <!--Panorama 项目一-->
         <phone:PanoramaItem Header="">
             <Grid>
@@ -29,9 +58,9 @@
                     <RowDefinition ></RowDefinition>
                     <RowDefinition ></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock>
-                        键入你的
+                <Grid Grid.Row="0" VerticalAlignment="Bottom">
+                    <TextBlock Margin="10,18">
+                        键入你的症状：
                     </TextBlock>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -84,23 +113,23 @@
                             <Button BorderBrush="{x:Null}" Template="{StaticResource 药品直达ButtonControlTemplate}"></Button>
                         </Grid>
                         <Grid Grid.Row="0" Grid.Column="1">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 食疗大全ButtonControlTemplate}"></Button>
+                            <Button BorderBrush="{x:Null}" x:Name="BTN检查项目" Click="BTN检查项目_Click" Template="{StaticResource 检查项目ButtonControlTemplate}"></Button>
 
                         </Grid>
                         <Grid Grid.Row="0" Grid.Column="2">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 手术项目ButtonControlTemplate}"></Button>
+                            <Button BorderBrush="{x:Null}" x:Name="BTN手术项目" Click="BTN手术项目_Click" Template="{StaticResource 手术项目ButtonControlTemplate}"></Button>
 
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="0">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 医院大全ButtonControlTemplate}"></Button>
+                            <Button BorderBrush="{x:Null}" x:Name="BTN食疗大全" Click="BTN食疗大全_Click" Template="{StaticResource 食疗大全ButtonControlTemplate}"></Button>
 
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="1">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 药店大全ButtonControlTemplate}"></Button>
+                            <Button BorderBrush="{x:Null}" x:Name="BTN健康食品" Click="BTN健康食品_Click" Template="{StaticResource 健康食品ButtonControlTemplate}"></Button>
 
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="2">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 健康知识ButtonControlTemplate}"></Button>
+                            <Button BorderBrush="{x:Null}" x:Name="BTN健康知识" Click="BTN健康知识_Click" Template="{StaticResource 健康知识ButtonControlTemplate}"></Button>
 
                         </Grid>
                         <Grid Grid.Row="2" Grid.Column="0">
@@ -108,11 +137,11 @@
 
                         </Grid>
                         <Grid Grid.Row="2" Grid.Column="1">
-                            <!--<Button BorderBrush="{x:Null}" Template="{StaticResource 检查项目ButtonControlTemplate}"></Button>-->
+                            <Button BorderBrush="{x:Null}" Template="{StaticResource 医院大全ButtonControlTemplate}"></Button>
 
                         </Grid>
                         <Grid Grid.Row="2" Grid.Column="2">
-                            <!--<Button BorderBrush="{x:Null}" Template="{StaticResource 检查项目ButtonControlTemplate}"></Button>-->
+                            <Button BorderBrush="{x:Null}" Template="{StaticResource 药店大全ButtonControlTemplate}"></Button>
 
                         </Grid>
 

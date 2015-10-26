@@ -16,5 +16,19 @@ namespace Healthcare.MyUserControl
         {
             InitializeComponent();
         }
+
+        private void BTNMore_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)this.BTNMore.IsChecked)
+            {
+                this.ItemBlock.MaxHeight = 4800;
+            }
+            else
+            {
+                this.ItemBlock.MaxHeight = 480;
+
+            }
+
+        }
     }
 }

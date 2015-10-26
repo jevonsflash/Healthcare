@@ -11,11 +11,16 @@ using Healthcare.Resources;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Healthcare.JMessbox;
+using Healthcare.Helper;
+using Healthcare.Model;
+using Healthcare.Server;
 
 namespace Healthcare
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private static InfoServer infoser = new InfoServer();
+
         // 构造函数
         public MainPage()
         {
@@ -23,8 +28,30 @@ namespace Healthcare
             InitBGStyle();
             // 用于本地化 ApplicationBar 的示例代码
             //BuildLocalizedApplicationBar();
+            int page = 1;
+            HttpHelper ht = new HttpHelper();
+            string url = "http://www.tngou.net/api/info/list";
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("page", page.ToString());
+            ht.CreatePostHttpResponse(url, dic);
+            ht.FileWatchEvent += Ht_FileWatchEvent;
         }
+        private void Ht_FileWatchEvent(object sender, CompleteEventArgs e)
+        {
+            List<InfoShowItem> temp = infoser.InfoShowDeserializer(e.Node).ToList();
+            this.Dispatcher.BeginInvoke(() =>
+            {
+                this.LBInfo.ItemsSource = temp.Select(c => new
+                {
+                    id = c.id,
+                    title = c.title,
+                    time = TimeHelper.TimeStamptoDateTime(c.time.ToString()).ToString("MM月dd日"),
+                    count = c.count,
+                    rcount = c.rcount
+                });
 
+            });
+        }
 
         private void TBMainSearch_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -91,15 +118,11 @@ namespace Healthcare
             {
                 JMessBox jb = new JMessBox("请输入内容");
                 jb.Show();
-                string destination = "/GeneralDetailPage.xaml";
-                destination += string.Format("?id={0}", "33");
-                NavigationService.Navigate(new Uri(destination, UriKind.Relative));
-
             }
             else
             {
                 string destination = "/GeneralResultPage.xaml";
-                destination += string.Format("?keyword={0}", this.TBMainSearch.Text);
+                destination += string.Format("?keyword={0}&type={1}", this.TBMainSearch.Text, "Symptom");
                 NavigationService.Navigate(new Uri(destination, UriKind.Relative));
             }
 
@@ -121,6 +144,58 @@ namespace Healthcare
                 }
             };
             jb.Show();
+        }
+
+        private void LBInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string parmId = ((sender as ListBox).SelectedItem as dynamic).id.ToString();
+            string destination = "/InfoDetailPage.xaml";
+            destination += string.Format("?id={0}", parmId);
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
+        }
+
+        private void BTN检查项目_Click(object sender, RoutedEventArgs e)
+        {
+            string destination = "/GeneralResultPage.xaml";
+            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Check");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
+        }
+
+        private void BTN手术项目_Click(object sender, RoutedEventArgs e)
+        {
+            string destination = "/GeneralResultPage.xaml";
+            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Operation");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
+        }
+
+        private void BTN食疗大全_Click(object sender, RoutedEventArgs e)
+        {
+            string destination = "/GeneralResultPage.xaml";
+            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Cook");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
+
+        }
+
+        private void BTN健康食品_Click(object sender, RoutedEventArgs e)
+        {
+            string destination = "/GeneralResultPage.xaml";
+            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Food");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
+
+        }
+
+        private void BTN健康知识_Click(object sender, RoutedEventArgs e)
+        {
+            string destination = "/GeneralResultPage.xaml";
+            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Operation");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
+
         }
     }
 }

@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Model="clr-namespace:Healthcare.Model"
     x:Class="Healthcare.GeneralResultPage"
+    xmlns:my="clr-namespace:Healthcare.MyUserControl"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
@@ -34,20 +35,18 @@
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="我的应用程序" Style="{StaticResource PhoneTextNormalStyle}"/>
         </StackPanel>
-
         <!--ContentPanel - 在此处放置其他内容-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"></RowDefinition>
-                
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Border x:Name="BD_TBFrame" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="White" CornerRadius="36">
                     <TextBox x:Name="TBMainSearch"
 						HorizontalAlignment="Left"
-						Text="TextBox" 
 						Width="333" 
 						Style="{StaticResource TextBoxStyle1}" 
 						GotFocus="TBMainSearch_GotFocus" LostFocus="TBMainSearch_LostFocus" 
@@ -56,28 +55,30 @@
                 </Border>
                 <Button x:Name="BTNSearch" Click="BTNSearch_Click" Content="Button"  HorizontalAlignment="Right"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate2}" Width="100"/>
             </Grid>
-            <StackPanel>
-                
+            <StackPanel x:Name="SPFilter" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="BTNFilter" Height="78" Click="BTNFilter_Click" Template="{StaticResource ButtonControlTemplate3}" Margin="10,0"></Button>
+                <Button x:Name="BTNFilter2" Height="78" Click="BTNFilter2_Click"  Template="{StaticResource ButtonControlTemplate3}" Margin="10,0"></Button>
             </StackPanel>
+            <my:MsgBoxControl x:Name="MsgBox" Grid.Row="2" Visibility="Collapsed"></my:MsgBoxControl>
             <phone:LongListSelector 
                 x:Name="LLSResult" 
                 Grid.Row="2" SelectionChanged="LLSResult_SelectionChanged"
                 >
-                
+
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding Path=id}"  Margin="70 10" FontSize="22"></TextBlock>
-                            <TextBlock Grid.Column="1" Text="{Binding Path=name}"  Margin="70 10" FontSize="22"></TextBlock>
-                        </Grid>
+                       <TextBlock Text="{Binding Path=name}"  Margin="32 10" FontSize="32"></TextBlock>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
-
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="BTNBack" Grid.Column="0" BorderThickness="0" Click="BTNBack_Click">返回</Button>
+                <Button x:Name="BTNMore" Grid.Column="1" BorderThickness="0" Click="BTNMore_Click">查看相关疾病</Button>
+            </Grid>
 
         </Grid>
     </Grid>
