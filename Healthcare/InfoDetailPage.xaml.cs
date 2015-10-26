@@ -13,7 +13,8 @@ using Healthcare.Model;
 using System.Windows.Documents;
 using System.Text.RegularExpressions;
 using System.Windows.Markup;
-using HTMLConverter;
+using System.IO.IsolatedStorage;
+using System.Text;
 
 namespace Healthcare
 {
@@ -52,18 +53,25 @@ namespace Healthcare
                 this.TBTime.Text = TimeHelper.TimeStamptoDateTime(oInfo.time.ToString()).ToString("MM月dd日");
                 this.TBCount.Text = oInfo.count.ToString();
                 this.TBRcount.Text = oInfo.rcount.ToString();
-                this.RTBContent.Blocks.Add(StrToParagraph(oInfo.message));
+                StrToParagraph(oInfo.message);
             });
         }
-        public Paragraph StrToParagraph(string input)
+        public void StrToParagraph(string input)
         {
-            if (input == null)
+            using (IsolatedStorageFile file = IsolatedStorageFile.GetUserStoreForApplication())
             {
-                return new Paragraph();
+                if (!file.DirectoryExists("temp"))
+                    file.CreateDirectory("temp");
+                using (IsolatedStorageFileStream fs = new IsolatedStorageFileStream("temp\\review.html", System.IO.FileMode.Create, file))
+                {
+                    string html = "<!DOCTYPE html><html lang='zh-CN'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' /></head><body>";
+                    html += input;
+                    html += "</body></html>";
+                    byte[] bytes = Encoding.UTF8.GetBytes(html);
+                    fs.Write(bytes, 0, bytes.Length);
+                }
             }
-            //string xaml = HtmlToXamlConverter.ConvertHtmlToXaml(input, false);
-            string xaml = string.Empty;
-            return (Paragraph)XamlReader.Load(xaml);
+            this.wb.Navigate(new Uri("temp\\review.html", UriKind.Relative));
         }
     }
 

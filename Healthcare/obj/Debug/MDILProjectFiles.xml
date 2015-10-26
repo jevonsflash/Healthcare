@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <XAPFiles>
+    <File>resources.pri</File>
+    <File>Healthcare.dll</File>
+    <File>Assets\AlignmentGrid.png</File>
+    <File>Assets\BadgeLogo.png</File>
+    <File>Assets\Logo.png</File>
+    <File>Assets\SplashScreen.png</File>
+    <File>Assets\SquareTile150x150.png</File>
+    <File>Assets\SquareTile71x71.png</File>
+    <File>Assets\StoreLogo.png</File>
+    <File>Assets\WideLogo.png</File>
+    <File>Assets\Tiles\FlipCycleTileLarge.png</File>
+    <File>Assets\Tiles\FlipCycleTileSmall.png</File>
+    <File>Assets\Tiles\IconicTileMediumLarge.png</File>
+    <File>Assets\Tiles\IconicTileSmall.png</File>
+    <File>body.xml</File>
+    <File>check.xml</File>
+    <File>Data\symptom.xml</File>
+    <File>department.xml</File>
+    <File>disease.xml</File>
+    <File>checkclassify.xml</File>
+    <File>food.xml</File>
+    <File>ico\search.png</File>
+    <File>ico\健康知识.png</File>
+    <File>ico\健康资讯.png</File>
+    <File>ico\健康食品.png</File>
+    <File>ico\医院大全.png</File>
+    <File>ico\手术项目.png</File>
+    <File>ico\检查项目.png</File>
+    <File>ico\疾病信息.png</File>
+    <File>ico\病状查询.png</File>
+    <File>ico\药企大全.png</File>
+    <File>ico\药品直达.png</File>
+    <File>ico\药店大全.png</File>
+    <File>ico\食疗大全.png</File>
+    <File>Img\matoblack.png</File>
+    <File>Img\matograss.png</File>
+    <File>Img\matopeace.png</File>
+    <File>Img\metro.png</File>
+    <File>Img\thumb\thumb_classic.png</File>
+    <File>Img\thumb\thumb_matoblack.png</File>
+    <File>Img\thumb\thumb_matograss.png</File>
+    <File>Img\thumb\thumb_matopeace.jpg</File>
+    <File>Img\thumb\thumb_metro.png</File>
+    <File>Img\UserContro.png</File>
+    <File>operation.xml</File>
+    <File>symptom.xml</File>
+    <File>AppManifest.xaml</File>
+    <File>Assets\ApplicationIcon.png</File>
+    <File>Assets\Tiles\FlipCycleTileMedium.png</File>
+    <File>Microsoft.Phone.Controls.dll</File>
+    <File Type="PCL">Newtonsoft.Json.dll</File>
+    <File>Newtonsoft.Json.xml</File>
+    <File>WMAppManifest.xml</File>
+    <File>AppxManifest.xml</File>
+  </XAPFiles>
+  <APPXFiles />
+</Files>
