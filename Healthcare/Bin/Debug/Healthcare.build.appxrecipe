@@ -116,29 +116,11 @@
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\食疗大全.png">
       <PackagePath>ico\食疗大全.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\matoblack.png">
-      <PackagePath>Img\matoblack.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\matograss.png">
-      <PackagePath>Img\matograss.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\matopeace.png">
-      <PackagePath>Img\matopeace.png</PackagePath>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\bg1.png">
+      <PackagePath>Img\bg1.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\metro.png">
       <PackagePath>Img\metro.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_classic.png">
-      <PackagePath>Img\thumb\thumb_classic.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_matoblack.png">
-      <PackagePath>Img\thumb\thumb_matoblack.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_matograss.png">
-      <PackagePath>Img\thumb\thumb_matograss.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_metro.png">
-      <PackagePath>Img\thumb\thumb_metro.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\UserContro.png">
       <PackagePath>Img\UserContro.png</PackagePath>
@@ -169,9 +151,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\symptom.xml">
       <PackagePath>symptom.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_matopeace.jpg">
-      <PackagePath>Img\thumb\thumb_matopeace.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

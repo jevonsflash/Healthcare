@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Healthcare.Resources;
+using System.Windows.Media;
 
 namespace Healthcare
 {
@@ -67,6 +68,8 @@ namespace Healthcare
         // 此代码在重新激活应用程序时不执行
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            Brush brush = Common.Background.GetBackgroundBrush();
+            App.RootFrame.Background = brush;
         }
 
         // 激活应用程序(置于前台)时执行的代码

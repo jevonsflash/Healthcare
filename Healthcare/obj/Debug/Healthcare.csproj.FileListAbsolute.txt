@@ -44,3 +44,4 @@ D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\Healthcare.csprojResolveAssem
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MyUserControl\FilterSelectorControl.g.cs
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MyUserControl\MsgBoxControl.g.cs
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\InfoDetailPage.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\AboutPage.g.cs

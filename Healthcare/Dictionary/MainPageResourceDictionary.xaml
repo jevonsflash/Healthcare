@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
 >
     <!-- 应该在此定义资源字典条目。-->
     <ControlTemplate x:Key="ButtonControlTemplate2" TargetType="Button">
@@ -51,7 +53,6 @@
             </TextBlock>
         </Border>
     </ControlTemplate>
-
     <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="Button">
         <Border x:Name="ButtonBackground" CornerRadius="30"  Width="220" Height="60" Background="Green" >
             <VisualStateManager.VisualStateGroups>
@@ -74,7 +75,7 @@
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
-					<Run Text="搜索"/>
+					<Run Text="搜索" Foreground="White"/>
             </TextBlock>
         </Border>
     </ControlTemplate>
@@ -312,5 +313,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>
