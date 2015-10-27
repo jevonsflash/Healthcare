@@ -27,7 +27,7 @@
         </Border>
     </ControlTemplate>
     <ControlTemplate x:Key="ButtonControlTemplate3" TargetType="Button">
-        <Border x:Name="ButtonBackground" CornerRadius="30"  Width="198" Height="60" Background="Transparent" BorderThickness="3" BorderBrush="White">
+        <Border x:Name="ButtonBackground" CornerRadius="30"  Width="158" Height="60" Background="Transparent" BorderThickness="3" BorderBrush="White">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
                     <VisualStateGroup.Transitions>

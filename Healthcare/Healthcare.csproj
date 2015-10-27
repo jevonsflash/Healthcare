@@ -253,6 +253,7 @@
     <Content Include="Data\symptom.xml" />
     <Content Include="department.xml" />
     <Content Include="disease.xml" />
+    <Content Include="checkclassify.xml" />
     <Content Include="food.xml" />
     <Content Include="ico\search.png" />
     <Content Include="ico\健康知识.png" />

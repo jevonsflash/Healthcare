@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot 是包含所有页面内容的根网格-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
@@ -31,12 +31,12 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.ColumnSpan="3" Grid.Row="0" x:Name="TBTitle" Text="{Binding Path=title, Mode=TwoWay}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle2Style}"/>
-            <TextBlock x:Name="TBTime" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=time}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}">
+            <TextBlock Grid.ColumnSpan="3" Grid.Row="0" x:Name="TBTitle" Text="{Binding Path=title, Mode=TwoWay}" Margin="10,0" FontSize="32" Foreground="Black" />
+            <TextBlock x:Name="TBTime" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left"  Text="{Binding Path=time}" Margin="10,0" FontSize="24" Foreground="Black"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="10,0" FontSize="24" Foreground="Black">
                 阅读:<Run x:Name="TBCount" Text="{Binding Path=count}"></Run>
             </TextBlock>
-            <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Style="{StaticResource PhoneTextSubtleStyle}">
+            <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Margin="10,0" FontSize="24" Foreground="Black">
            
                  评论:<Run x:Name="TBRcount" Text="{Binding Path=rcount}"></Run>
             </TextBlock>
@@ -46,46 +46,7 @@
 
         <!--ContentPanel - 在此处放置其他内容-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ScrollViewer>
-                <RichTextBox x:Name="RTBContent" IsReadOnly="True"  Margin="9,0" TextWrapping="Wrap">
-                    <RichTextBox.Blocks>
-                            <Paragraph>
-                                <LineBreak/>
-                            </Paragraph>
-                            <Paragraph>
-                            </Paragraph>
-                            <Paragraph>继国务院发布《关于推进价格机制改革的若干意见》要求理顺医疗服务价格后，在10月21日召开的“国新办就推进价格机制改革有关情况新闻发布会”上，国家发改委价格司司长许昆林透露，关于医疗服务价格改革的指导意见已经完成了初稿，正在征求意见过程中，今年年底前应该能够下发。
-                                <LineBreak/>
-                            </Paragraph>
-                            
-                            <Paragraph>同日，国家发改委公布了《中央定价目录》，规定特殊药品及血液由中央定价，自2016年1月1日起正式施行。根据《中央定价目录》，国务院价格主管部门将为麻醉药品和第一类精神药品规定最高出厂价格和最高零售价格；国家卫计委将会同国务院价格主管部门为公民临床用血规定血站供应价格。</Paragraph>
-                            <Paragraph>
-                                
-                                <Bold>医疗服务价格改革指导意见年底出台</Bold>
-                            </Paragraph>
-                            <Paragraph>2015年初，国务院在《深化医药卫生体制改革2015年重点工作任务》提出，要求国家发改委在12月底前完成制定开展医疗服务价格形成机制改革试点的指导性文件。</Paragraph>
-                            <Paragraph>继国务院近日在《关于推进价格机制改革的若干意见》中将理顺医疗服务价格作为六大领域价格改革任务之一后，这一文件再次被争议。今日（10月21日），国家发改委终于给予明确答复。</Paragraph>
-                            <Paragraph>“这是既定任务，我们已经完成了初稿，正在征求意见过程中，今年年底前应该能够下发。”许昆林透露，发改委正会同有关部门加大力度统一规范医疗服务价格项目，开展按病种、按服务单元等收费方式改革试点。</Paragraph>
-                            <Paragraph>此外，许昆林强调，国家发改委尤其重视指导地方配合公立医院改革，希望通过取消药品加成、调整医疗服务价格、改革收付费方式和落实政府办医责任等综合措施和联动政策，促进医疗机构新型补偿机制的建立。</Paragraph>
-                            <Paragraph>“当前医疗服务价格远没有理顺。受医疗机构诊疗用药行为和医保基金支付能力等因素的影响，现行医疗服务价格未能完全体现医务人员技术劳务价值。”许昆林认为，医疗服务价格行为仍存在不规范问题，加重群众医药费用负担的情况还在时有发生。</Paragraph>
-                            <Paragraph>许昆林在会上表示，接下来，国家发改委将围绕医改目标，正确处理好政府和市场关系，坚持调放结合，逐步建立分类管理、动态调整、多方参与价格形成的机制。对市场竞争充分、个性化需求强的公立医疗机构的医疗服务，国家发改委将及时放开价格来促进竞争，以提供更加优质的服务。</Paragraph>
-                            <Paragraph>许昆林还强调，改革过程中一定要强化价格、医保、医疗等相关政策衔接，不能单兵突进。许昆林认为，推进医疗服务价格改革，要着力做好三个结合。一是与充分发挥医保控费作用相结合，二是与建立科学的补偿机制相结合，三是与减轻患者负担相结合。</Paragraph>
-                            <Paragraph>
-                                <Bold>《中央定价目录》“瘦身”医药定价项目有增有减</Bold>
-                            </Paragraph>
-                            <Paragraph>“此次公布的《中央定价目录》大幅缩减了定价范围，定价具体项目由以前的100种左右减少为20种。”国家发改委副主任胡祖才称，保留下来的定价项目将采用清单的形式向社会公布，并接受监督。</Paragraph>
-                            <Paragraph>尽管《中央定价目录》进行了“瘦身”，但涉及医药卫生领域的定价项目却有增有减。健康界通过查询《国家计委和国务院有关部门定价目录》（10月21日起更名为《中央定价目录》）发现，该目录“部分重要药品”的定价内容包括麻醉药品、一类精神药品、国家统一收购的预防免疫药品和避孕药具以及其他垄断性的少量特殊药品。</Paragraph>
-                            <Paragraph>《中央定价目录》在以上定价内容的基础上只保留了麻醉药品和第一类精神药品的定价权力，其他药品的定价全部归还市场。与此同时，《中央定价目录》却增加了公民临床用血血站供应价格的定价权力。</Paragraph>
-                            <Paragraph>而此前，公民临床用血血站供应价格由各省、自治区、直辖市卫生行政部门会同同级价格主管部门根据当地实际情况制定。从2016年1月1日起，这一定价权力将回归中央政府。</Paragraph>
-                            <Paragraph>据胡祖才在会上介绍，此后，中央政府只拥有《中央定价目录》中所涉项目的定价权，目录之外的项目中央政府不再具有定价权。</Paragraph>
-                            <Paragraph>包括麻醉药品、第一类精神药品、公民临床用血在内的项目除了接受中央政府定价，地方也在制定定价目录。据胡祖才介绍，目前国家发改委已经批复了30个省份（自治区、直辖市）的定价目录，只还差一个省份，将也与近期完成。</Paragraph>
-                            <Paragraph>“中央定价目录与地方定价目录构成了完整的政府定价目录。”许昆林补充道，即使是政府制定价格，今后也将尽量少制定具体价格，尽可能制定一些办法和规则，给予经营者一定的自主权。</Paragraph>
-                            <Paragraph>
-                            </Paragraph>
-                            
-                    </RichTextBox.Blocks>
-                </RichTextBox>
-            </ScrollViewer>
+            <phone:WebBrowser x:Name="wb"/>
         </Grid>
     </Grid>
 

@@ -11,16 +11,21 @@ namespace Healthcare.Helper
     {
         public static string[] GetFilterName(string typeName)
         {
-            string[] result = new string[2];
+            string[] result = new string[3];
             switch (typeName)
             {
                 case "Symptom":
                 case "Disease":
-                case "Check":
                 case "Operation":
                     result[0] = "Body|部位";
                     result[1] = "Department|科室";
                     break;
+                case "Check":
+                    result[0] = "Body|部位";
+                    result[1] = "Department|科室";
+                    result[2] = "Checkclassify|方式";
+                    break;
+
             }
             return result;
         }

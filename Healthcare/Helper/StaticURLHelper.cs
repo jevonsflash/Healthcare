@@ -17,6 +17,7 @@ namespace Healthcare.Helper
         public static string CheckShow = "http://www.tngou.net/api/check/show";
         public static string CheckShowByPlace = "http://www.tngou.net/api/check/place";
         public static string CheckShowByDepartment = "http://www.tngou.net/api/check/department";
+        public static string CheckShowClassify = "http://www.tngou.net/api/check/list";
         public static string OperationShow = "http://www.tngou.net/api/operation/show";
         public static string OperationShowByPlace = "http://www.tngou.net/api/operation/place";
         public static string OperationShowByDepartment = "http://www.tngou.net/api/operation/department";
@@ -48,6 +49,7 @@ namespace Healthcare.Helper
                     sResult[0] = StaticURLHelper.CheckShow;
                     sResult[1] = StaticURLHelper.CheckShowByPlace;
                     sResult[2] = StaticURLHelper.CheckShowByDepartment;
+                    sResult[3] = StaticURLHelper.CheckShowClassify;
                     break;
                 case "Operation":
                     sResult[0] = StaticURLHelper.OperationShow;

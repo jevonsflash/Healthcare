@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-OFF7OLQ</Machine>
+    <WindowsUser>jevon</WindowsUser>
+    <TargetPlatformIdentifier>Windows Phone</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows Phone 8.1</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>76e8d2ec-a834-4d44-af8d-75b381649da3</PackageIdentityName>
+    <IntermediateOutputPath>D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Healthcare.dll">
+      <PackagePath>Healthcare.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.dll">
+      <PackagePath>Microsoft.Phone.Controls.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.xml">
+      <PackagePath>Newtonsoft.Json.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\AlignmentGrid.png">
+      <PackagePath>Assets\AlignmentGrid.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\ApplicationIcon.png">
+      <PackagePath>Assets\ApplicationIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\BadgeLogo.png">
+      <PackagePath>Assets\BadgeLogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\Logo.png">
+      <PackagePath>Assets\Logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\SplashScreen.png">
+      <PackagePath>Assets\SplashScreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\SquareTile150x150.png">
+      <PackagePath>Assets\SquareTile150x150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\SquareTile71x71.png">
+      <PackagePath>Assets\SquareTile71x71.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\WideLogo.png">
+      <PackagePath>Assets\WideLogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\FlipCycleTileLarge.png">
+      <PackagePath>Assets\Tiles\FlipCycleTileLarge.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\FlipCycleTileMedium.png">
+      <PackagePath>Assets\Tiles\FlipCycleTileMedium.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\FlipCycleTileSmall.png">
+      <PackagePath>Assets\Tiles\FlipCycleTileSmall.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\IconicTileMediumLarge.png">
+      <PackagePath>Assets\Tiles\IconicTileMediumLarge.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Assets\Tiles\IconicTileSmall.png">
+      <PackagePath>Assets\Tiles\IconicTileSmall.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\search.png">
+      <PackagePath>ico\search.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\健康知识.png">
+      <PackagePath>ico\健康知识.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\健康资讯.png">
+      <PackagePath>ico\健康资讯.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\健康食品.png">
+      <PackagePath>ico\健康食品.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\医院大全.png">
+      <PackagePath>ico\医院大全.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\手术项目.png">
+      <PackagePath>ico\手术项目.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\检查项目.png">
+      <PackagePath>ico\检查项目.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\疾病信息.png">
+      <PackagePath>ico\疾病信息.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\病状查询.png">
+      <PackagePath>ico\病状查询.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\药企大全.png">
+      <PackagePath>ico\药企大全.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\药品直达.png">
+      <PackagePath>ico\药品直达.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\药店大全.png">
+      <PackagePath>ico\药店大全.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\ico\食疗大全.png">
+      <PackagePath>ico\食疗大全.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\matoblack.png">
+      <PackagePath>Img\matoblack.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\matograss.png">
+      <PackagePath>Img\matograss.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\matopeace.png">
+      <PackagePath>Img\matopeace.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\metro.png">
+      <PackagePath>Img\metro.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_classic.png">
+      <PackagePath>Img\thumb\thumb_classic.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_matoblack.png">
+      <PackagePath>Img\thumb\thumb_matoblack.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_matograss.png">
+      <PackagePath>Img\thumb\thumb_matograss.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_metro.png">
+      <PackagePath>Img\thumb\thumb_metro.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\UserContro.png">
+      <PackagePath>Img\UserContro.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\body.xml">
+      <PackagePath>body.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\check.xml">
+      <PackagePath>check.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Data\symptom.xml">
+      <PackagePath>Data\symptom.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\department.xml">
+      <PackagePath>department.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\disease.xml">
+      <PackagePath>disease.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\checkclassify.xml">
+      <PackagePath>checkclassify.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\food.xml">
+      <PackagePath>food.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\operation.xml">
+      <PackagePath>operation.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\symptom.xml">
+      <PackagePath>symptom.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Img\thumb\thumb_matopeace.jpg">
+      <PackagePath>Img\thumb\thumb_matopeace.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

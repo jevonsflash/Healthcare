@@ -55,10 +55,13 @@
                 </Border>
                 <Button x:Name="BTNSearch" Click="BTNSearch_Click" Content="Button"  HorizontalAlignment="Right"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate2}" Width="100"/>
             </Grid>
-            <StackPanel x:Name="SPFilter" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="BTNFilter" Height="78" Click="BTNFilter_Click" Template="{StaticResource ButtonControlTemplate3}" Margin="10,0"></Button>
-                <Button x:Name="BTNFilter2" Height="78" Click="BTNFilter2_Click"  Template="{StaticResource ButtonControlTemplate3}" Margin="10,0"></Button>
-            </StackPanel>
+            <ScrollViewer Grid.Row="1" Height="80" HorizontalScrollBarVisibility="Visible">
+                <StackPanel x:Name="SPFilter" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="BTNFilter" Height="78" Click="BTNFilter_Click" Template="{StaticResource ButtonControlTemplate3}" Margin="10,0"></Button>
+                    <Button x:Name="BTNFilter2" Height="78" Click="BTNFilter2_Click"  Template="{StaticResource ButtonControlTemplate3}" Margin="10,0"></Button>
+                    <Button x:Name="BTNFilter3" Height="78" Click="BTNFilter3_Click"  Template="{StaticResource ButtonControlTemplate3}" Margin="10,0"></Button>
+                </StackPanel>
+            </ScrollViewer>
             <my:MsgBoxControl x:Name="MsgBox" Grid.Row="2" Visibility="Collapsed"></my:MsgBoxControl>
             <phone:LongListSelector 
                 x:Name="LLSResult" 
@@ -67,7 +70,7 @@
 
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
-                       <TextBlock Text="{Binding Path=name}"  Margin="32 10" FontSize="32"></TextBlock>
+                        <TextBlock Text="{Binding Path=name}"  Margin="32 10" FontSize="32"></TextBlock>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
