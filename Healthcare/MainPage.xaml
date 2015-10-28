@@ -78,15 +78,13 @@
                         </TextBlock>
 
                         <Grid Grid.Row="1" Grid.Column="0">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 药品直达ButtonControlTemplate}"></Button>
+                            <Button BorderBrush="{x:Null}" x:Name="BTN药品查询" Click="BTN药品查询_Click" Template="{StaticResource 药品直达ButtonControlTemplate}"></Button>
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="1">
                             <Button BorderBrush="{x:Null}" x:Name="BTN检查项目" Click="BTN检查项目_Click" Template="{StaticResource 检查项目ButtonControlTemplate}"></Button>
-
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="2">
                             <Button BorderBrush="{x:Null}" x:Name="BTN手术项目" Click="BTN手术项目_Click" Template="{StaticResource 手术项目ButtonControlTemplate}"></Button>
-
                         </Grid>
                         <!--<Grid Grid.Row="1" Grid.Column="0">
                             <Button BorderBrush="{x:Null}" x:Name="BTN食疗大全" Click="BTN食疗大全_Click" Template="{StaticResource 食疗大全ButtonControlTemplate}"></Button>
@@ -115,7 +113,7 @@
 
                     </Grid>
                     <Grid Grid.Row="2" Grid.ColumnSpan="3">
-                        <TextBlock HorizontalAlignment="Left" Margin="20,10" VerticalAlignment="Center">dddd</TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="20,10" VerticalAlignment="Center">番茄健康助手 V<Run x:Name="TBVersion"></Run></TextBlock>
                         <HyperlinkButton HorizontalAlignment="Right" Margin="20,10" Click="HyperlinkButton_Click">关于
                         </HyperlinkButton>
                     </Grid>
@@ -163,7 +161,7 @@
             </ListBox>
         </phone:PanoramaItem>
         <phone:PanoramaItem Header="健康知识">
-            <ListBox x:Name="LBInfo2" SelectionChanged="LBInfo2_SelectionChanged">
+            <ListBox x:Name="LBLore" SelectionChanged="LBLore_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="24,10" Width="375">

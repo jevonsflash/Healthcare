@@ -13,9 +13,12 @@ namespace Healthcare
 {
     public partial class AboutPage : PhoneApplicationPage
     {
+        private string v = (Application.Current as App).V;
         public AboutPage()
         {
             InitializeComponent();
+            this.TBVersion.Text = v;
+            this.TBVersion2.Text = v;
         }
 
 
@@ -26,12 +29,5 @@ namespace Healthcare
             ect01.Show();
         }
 
-        private void BTNAlipay_Click(object sender, RoutedEventArgs e)
-        {
-            WebBrowserTask wbt01 = new WebBrowserTask();
-            UriBuilder uriSite = new UriBuilder("http://shenghuo.alipay.com/tocard.htm");
-            wbt01.Uri = uriSite.Uri;
-            wbt01.Show();
-        }
     }
 }

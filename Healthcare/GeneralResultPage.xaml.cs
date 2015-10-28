@@ -23,8 +23,7 @@ namespace Healthcare
         private int filterNum;//0,1,2
         private string keyword = string.Empty;
         private string type = string.Empty;
-        private string id = string.Empty;
-        private string name = string.Empty;
+        private string strId = string.Empty;
         private MyUserControl.FilterSelectorControl oItem;
         private List<Model.KeyWordsMap> result;
         public GeneralResultPage()
@@ -78,12 +77,29 @@ namespace Healthcare
             {
                 keyword = (parameters["keyword"] as string);
             }
+            if (parameters.ContainsKey("id"))
+            {
+                strId = (parameters["id"] as string);
+            }
             this.TBMainSearch.Text = keyword;
+            InitFilterButton("", "", "");
             result = await GetData(keyword);
-            Render();
-
+            if (result != null)
+            {
+                Render();
+            }
+            else
+            {
+                string url = string.Empty;
+                url = StaticURLHelper.GetURL(type).List;
+                Dictionary<string, string> dic = new Dictionary<string, string>();
+                if (!string.IsNullOrEmpty(strId))
+                {
+                    dic.Add("id", strId);
+                }
+                GetJSON(url, dic);
+            }
             base.OnNavigatedTo(e);
-
         }
 
         private void Render()
@@ -102,7 +118,7 @@ namespace Healthcare
             {
                 InitMsg(renderResult.Count == 0);
                 this.LLSResult.ItemsSource = renderResult;
-                SetFilterButton();
+                //SetFilterButton();
 
             });
         }
@@ -163,11 +179,24 @@ namespace Healthcare
 
         private void OItem_OnData2Changed(object sender, SelectionChangedEventArgs e)
         {
-            id = ((sender as ListBox).SelectedItem as BaseMap).id.ToString();
-            name = ((sender as ListBox).SelectedItem as BaseMap).name;
-            GetJSON(filterNum);
+            string id = ((sender as ListBox).SelectedItem as BaseMap).id.ToString();
+            string name = ((sender as ListBox).SelectedItem as BaseMap).name;
+            string url = string.Empty;
+            switch (filterNum)
+            {
+                case '0': url = StaticURLHelper.GetURL(type).Filter1; break;
+                case '1': url = StaticURLHelper.GetURL(type).Filter2; break;
+                case '2': url = StaticURLHelper.GetURL(type).Filter3; break;
+                default:
+                    url = StaticURLHelper.GetURL(type).Filter1; break;
+
+            }
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("id", id);
+
+            GetJSON(url, dic);
             this.LayoutRoot.Children.Remove(oItem);
-            SetFilterButton();
+            SetFilterButton(name);
         }
 
 
@@ -181,12 +210,23 @@ namespace Healthcare
         {
             if (filterNum == 2)
             {
-                id = ((sender as ListBox).SelectedItem as BaseMap).id.ToString();
-                name = ((sender as ListBox).SelectedItem as BaseMap).name;
-                GetJSON(filterNum);
-                this.LayoutRoot.Children.Remove(oItem);
-                SetFilterButton();
+                string id = ((sender as ListBox).SelectedItem as BaseMap).id.ToString();
+                string name = ((sender as ListBox).SelectedItem as BaseMap).name;
+                string url = string.Empty;
+                switch (filterNum)
+                {
+                    case '0': url = StaticURLHelper.GetURL(type).Filter1; break;
+                    case '1': url = StaticURLHelper.GetURL(type).Filter2; break;
+                    case '2': url = StaticURLHelper.GetURL(type).Filter3; break;
+                    default:
+                        url = StaticURLHelper.GetURL(type).Filter1; break;
 
+                }
+                Dictionary<string, string> dic = new Dictionary<string, string>();
+                dic.Add("id", id);
+                GetJSON(url, dic);
+                this.LayoutRoot.Children.Remove(oItem);
+                SetFilterButton(name);
             }
         }
         private void OItem_OnCancel(object sender, RoutedEventArgs e)
@@ -248,7 +288,7 @@ namespace Healthcare
                 oItem.LBSelector1.ItemsSource = list;
             });
         }
-        private void SetFilterButton()
+        private void SetFilterButton(string name)
         {
             if (filterNum == 0)
             {
@@ -292,12 +332,9 @@ namespace Healthcare
             }
 
         }
-        private void GetJSON(int filterNum)
+        private void GetJSON(string url, Dictionary<string, string> dic)
         {
             HttpHelper ht = new HttpHelper();
-            string url = StaticURLHelper.GetURL(type)[filterNum + 1];
-            Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("id", id);
             ht.CreatePostHttpResponse(url, dic);
             ht.FileWatchEvent += Ht_FileWatchEvent;
         }

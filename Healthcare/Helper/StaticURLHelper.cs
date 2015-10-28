@@ -6,66 +6,113 @@ using System.Threading.Tasks;
 
 namespace Healthcare.Helper
 {
+    public class UrlResult
+    {
+        public string Show { get; set; }
+        public string List { get; set; }
+        public string Filter1 { get; set; }
+        public string Filter2 { get; set; }
+        public string Filter3 { get; set; }
+        public string Other1 { get; set; }
+        public string Other2 { get; set; }
+
+    }
     public static class StaticURLHelper
     {
         public static string DiseaseShow = "http://www.tngou.net/api/disease/show";
         public static string DiseaseShowByPlace = "http://www.tngou.net/api/disease/place";
         public static string DiseaseShowByDepartment = "http://www.tngou.net/api/disease/department";
+        public static string DiseaseList = "http://www.tngou.net/api/disease/list";
+
         public static string SymptomShow = "http://www.tngou.net/api/symptom/show";
         public static string SymptomShowByPlace = "http://www.tngou.net/api/symptom/place";
         public static string SymptomShowByDepartment = "http://www.tngou.net/api/symptom/department";
+        public static string SymptomList = "http://www.tngou.net/api/symptom/list";
+
         public static string CheckShow = "http://www.tngou.net/api/check/show";
         public static string CheckShowByPlace = "http://www.tngou.net/api/check/place";
         public static string CheckShowByDepartment = "http://www.tngou.net/api/check/department";
         public static string CheckShowClassify = "http://www.tngou.net/api/check/list";
+        public static string CheckList = "http://www.tngou.net/api/check/list";
+
         public static string OperationShow = "http://www.tngou.net/api/operation/show";
         public static string OperationShowByPlace = "http://www.tngou.net/api/operation/place";
         public static string OperationShowByDepartment = "http://www.tngou.net/api/operation/department";
-        public static string FoodShow = "http://www.tngou.net/api/food/show";
+        public static string OperationList = "http://www.tngou.net/api/operation/list";
+
+        public static string DrugShow = "http://www.tngou.net/api/drug/show";
+        public static string DrugShowBySearch = "http://www.tngou.net/api/search";
+        public static string DrugShowByNumber = "http://www.tngou.net/api/drug/number";
+        public static string DrugShowByCode = "http://www.tngou.net/api/drug/code";
+        public static string DrugList = "http://www.tngou.net/api/drug/list";
+        public static string DrugShowClassify = "http://www.tngou.net/api/drug/classify";
+
         public static string LoreShow = "http://www.tngou.net/api/lore/show";
         public static string LoreList = "http://www.tngou.net/api/lore/list";
-
-
         public static string InfoShow = "http://www.tngou.net/api/info/show";
         public static string InfoList = "http://www.tngou.net/api/info/list";
 
 
-        public static string[] GetURL(string typeName)
+        public static UrlResult GetURL(string typeName)
 
         {
-            string[] sResult = new string[5];
+            UrlResult oResult = new UrlResult();
             switch (typeName)
             {
                 case "Symptom":
-                    sResult[0] = StaticURLHelper.SymptomShow;
-                    sResult[1] = StaticURLHelper.SymptomShowByPlace;
-                    sResult[2] = StaticURLHelper.SymptomShowByDepartment;
+                    oResult.Show = StaticURLHelper.SymptomShow;
+                    oResult.List = StaticURLHelper.SymptomList;
+                    oResult.Filter1 = StaticURLHelper.SymptomShowByPlace;
+                    oResult.Filter2 = StaticURLHelper.SymptomShowByDepartment;
                     break;
                 case "Disease":
-                    sResult[0] = StaticURLHelper.DiseaseShow;
-                    sResult[1] = StaticURLHelper.DiseaseShowByPlace;
-                    sResult[2] = StaticURLHelper.DiseaseShowByDepartment;
+                    oResult.Show = StaticURLHelper.DiseaseShow;
+                    oResult.List = StaticURLHelper.DiseaseList;
+                    oResult.Filter1 = StaticURLHelper.DiseaseShowByPlace;
+                    oResult.Filter2 = StaticURLHelper.DiseaseShowByDepartment;
                     break;
                 case "Check":
-                    sResult[0] = StaticURLHelper.CheckShow;
-                    sResult[1] = StaticURLHelper.CheckShowByPlace;
-                    sResult[2] = StaticURLHelper.CheckShowByDepartment;
-                    sResult[3] = StaticURLHelper.CheckShowClassify;
+                    oResult.Show = StaticURLHelper.CheckShow;
+                    oResult.List = StaticURLHelper.CheckList;
+                    oResult.Filter1 = StaticURLHelper.CheckShowByPlace;
+                    oResult.Filter2 = StaticURLHelper.CheckShowByDepartment;
+                    oResult.Filter3 = StaticURLHelper.CheckShowClassify;
                     break;
                 case "Operation":
-                    sResult[0] = StaticURLHelper.OperationShow;
-                    sResult[1] = StaticURLHelper.OperationShowByPlace;
-                    sResult[2] = StaticURLHelper.OperationShowByDepartment;
-                    break;
-                case "Food":
-                    sResult[0] = StaticURLHelper.FoodShow;
+                    oResult.Show = StaticURLHelper.OperationShow;
+                    oResult.List = StaticURLHelper.OperationList;
+                    oResult.Filter1 = StaticURLHelper.OperationShowByPlace;
+                    oResult.Filter2 = StaticURLHelper.OperationShowByDepartment;
                     break;
 
+                case "Drug":
+                    oResult.Show = StaticURLHelper.DrugShow;
+                    oResult.List = StaticURLHelper.DrugShowBySearch;
+                    oResult.Filter1 = StaticURLHelper.DrugShowClassify;
+                    break;
+                case "DrugNumber":
+                    oResult.Show = StaticURLHelper.DrugShow;
+                    oResult.List = StaticURLHelper.DrugShowByNumber;
+                    oResult.Filter1 = StaticURLHelper.DrugShowClassify;
+                    break;
+                case "DrugCode":
+                    oResult.Show = StaticURLHelper.DrugShow;
+                    oResult.List = StaticURLHelper.DrugShowByCode;
+                    oResult.Filter1 = StaticURLHelper.DrugShowClassify;
+
+                    break;
+
+                case "Info":
+                    oResult.Show = StaticURLHelper.InfoShow;
+                    break;
+                case "Lore":
+                    oResult.Show = StaticURLHelper.LoreShow;
+                    break;
 
                 default: break;
 
             }
-            return sResult;
+            return oResult;
         }
     }
 }

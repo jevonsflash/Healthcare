@@ -39,7 +39,7 @@ namespace Healthcare
 
             if (!string.IsNullOrEmpty(idStr))
             {
-                string url = StaticURLHelper.GetURL(type)[0];
+                string url = StaticURLHelper.GetURL(type).Show;
                 GetData(url, idStr);
             }
         }

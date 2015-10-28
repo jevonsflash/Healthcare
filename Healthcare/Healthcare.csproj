@@ -101,6 +101,9 @@
     <Compile Include="Common\Background.cs" />
     <Compile Include="Common\JMessBox.cs" />
     <Compile Include="Converter\ViewMoreConverter.cs" />
+    <Compile Include="DrugSubPage.xaml.cs">
+      <DependentUpon>DrugSubPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper\DeserializeHelper.cs" />
     <Compile Include="Helper\FilterHelper.cs" />
     <Compile Include="Helper\ItemDetailHelper.cs" />
@@ -176,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DrugSubPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

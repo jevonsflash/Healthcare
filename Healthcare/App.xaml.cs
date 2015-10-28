@@ -19,11 +19,18 @@ namespace Healthcare
         /// <returns>电话应用程序的根框架。</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
+        private string v = "1.0";
+        public string V
+        {
+            get
+            { return v; }
+        }
         /// <summary>
         /// Application 对象的构造函数。
         /// </summary>
         public App()
         {
+
             // 未捕获的异常的全局处理程序。
             UnhandledException += Application_UnhandledException;
 

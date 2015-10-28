@@ -49,7 +49,7 @@
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="/Img/AlbumArtPlaceholder.png"></Image>
                     <TextBlock Grid.Row="1"  HorizontalAlignment="Center">
-                            番茄播放器 - Mato Player 版本<Run x:Name="TBVersion"></Run><LineBreak/>
+                            番茄健康助手 -  版本<Run x:Name="TBVersion"></Run><LineBreak/>
                             Design &amp; Code By LinXiao &#169; 2015
                     </TextBlock>
                     <StackPanel Grid.Row="2" Height="72" Background="{StaticResource PhoneChromeBrush}">
@@ -58,7 +58,7 @@
                     <RichTextBox Grid.Row="3" IsReadOnly="True">
                         <RichTextBox.Blocks>
                             <Paragraph>
-                                由于系统限制，暂时无法实现拖动快进，XboxMusic列表的编辑等功能
+                                此应用数据来源于 天狗云(tngou.net)
                                 <LineBreak/>
                                 Windows Phone Toolkit
                                 <LineBreak/>
@@ -76,28 +76,18 @@
                     </StackPanel>
                     <RichTextBox Grid.Row="5" IsReadOnly="True">
                         <RichTextBox.Blocks>
-                            <Paragraph >首先感谢您使用这款播放器，希望它能够带给您愉快的音乐体验。
+                            <Paragraph >首先感谢下载并体验。
                                 <LineBreak/>
                             </Paragraph>
                             <Paragraph>新版
                                 <Run x:Name="TBVersion2"></Run> 更新内容：
                                 <LineBreak/>
-                                1.更换歌词服务提供者为歌词迷(www.geci.me)，歌词匹配更加准确
+                                1.界面调整
                                 <LineBreak/>
-                                2.歌词搜索功能完善，较上一版本提供更多结果条目，增加歌手名的显示
-                                <LineBreak/>
-                                3.自定义列表增加搜藏数，增加专辑名的显示
-                                <LineBreak/>
-                                4.为长按菜单加入按钮，触发菜单更方便！
-                                <LineBreak/>
-                                5.当前列表页面重新设计
-                                <LineBreak/>
-                                6.迎来一款新皮肤
-                                <LineBreak/>
-                                7.部分UI优化
+                                2.部分UI优化
                                 <LineBreak/>
                             </Paragraph>
-                            <Paragraph>番茄播放器(Mato Player)是一款本地音乐播放器，设计理念是单手操作，实用方便。支持定制播放列表，本地检索，歌词管理，睡眠模式等。
+                            <Paragraph>番茄健康助手是一款基于互联网健康新闻数据APP， 支持症状查询，疾病查询，药品查询，手术查询，检查项目查询，健康资讯栏目。
                                 <LineBreak/>
                                 如果您在使用的过程中有疑问，可以参考下面的使用帮助，也可以发送邮件给我。
                                     邮件链接在【意见反馈】一栏。
@@ -109,7 +99,7 @@
                     </StackPanel>
                     <RichTextBox Grid.Row="8" IsReadOnly="True">
                         <RichTextBox.Blocks>
-                            <Paragraph >如果您觉得番茄播放器不错，来吧，给我点动力！
+                            <Paragraph >如果您觉得番茄健康助手不错，来吧，给我点动力！
                             </Paragraph>
                         </RichTextBox.Blocks>
                     </RichTextBox>
@@ -121,24 +111,13 @@
                             <Paragraph>同样，我非常期待您的意见和建议。请将要反馈的内容发送到以下地址，对于每一条建议我都会认真回复：
                                 <LineBreak></LineBreak>
                                 <InlineUIContainer>
-                                    <HyperlinkButton x:Name="BTNMail"   Content="jevons@hotmail.com" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <HyperlinkButton x:Name="BTNMail" Click="BTNMail_Click"  Content="jevons@hotmail.com" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                 </InlineUIContainer>
                                 <LineBreak></LineBreak>
                                 也可以关注我的新浪微博：
                                 <LineBreak></LineBreak>
                                 <InlineUIContainer>
                                     <HyperlinkButton x:Name="BTNWeibo"   Content="@siuxing_小圣" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                                </InlineUIContainer>
-                            </Paragraph>
-                        </RichTextBox.Blocks>
-                    </RichTextBox>
-                    <RichTextBox Grid.Row="11" IsReadOnly="True">
-                        <RichTextBox.Blocks>
-                            <Paragraph>作为一名个人开发者，我需要帮助。下面是我的个人信息，在此，我表示由衷的感谢！：
-                                <LineBreak></LineBreak>
-                                <InlineUIContainer>
-                                    <HyperlinkButton x:Name="BTNAlipay"   Content="支付宝：jevonsflash@qq.com" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
                                 </InlineUIContainer>
                             </Paragraph>
                         </RichTextBox.Blocks>

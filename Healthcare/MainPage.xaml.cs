@@ -26,6 +26,7 @@ namespace Healthcare
         public MainPage()
         {
             InitializeComponent();
+            this.TBVersion.Text = (Application.Current as App).V;
             // 用于本地化 ApplicationBar 的示例代码
             //BuildLocalizedApplicationBar();
             int page = 1;
@@ -51,7 +52,7 @@ namespace Healthcare
             List<LoreShowItem> temp = loreser.LoreShowDeserializer(e.Node).ToList();
             this.Dispatcher.BeginInvoke(() =>
             {
-                this.LBInfo2.ItemsSource = temp.Select(c => new
+                this.LBLore.ItemsSource = temp.Select(c => new
                 {
                     id = c.id,
                     title = c.title,
@@ -164,13 +165,10 @@ namespace Healthcare
             jb.Show();
         }
 
-        private void LBInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BTN药品查询_Click(object sender, RoutedEventArgs e)
         {
-            string parmId = ((sender as ListBox).SelectedItem as dynamic).id.ToString();
-            string destination = "/InfoDetailPage.xaml";
-            destination += string.Format("?id={0}", parmId);
+            string destination = "/DrugSubPage.xaml";
             NavigationService.Navigate(new Uri(destination, UriKind.Relative));
-
         }
 
         private void BTN检查项目_Click(object sender, RoutedEventArgs e)
@@ -189,46 +187,27 @@ namespace Healthcare
 
         }
 
-        private void BTN食疗大全_Click(object sender, RoutedEventArgs e)
-        {
-            string destination = "/GeneralResultPage.xaml";
-            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Cook");
-            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
-
-
-        }
-
-        private void BTN健康食品_Click(object sender, RoutedEventArgs e)
-        {
-            string destination = "/GeneralResultPage.xaml";
-            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Food");
-            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
-
-
-        }
-
-        private void BTN健康知识_Click(object sender, RoutedEventArgs e)
-        {
-            string destination = "/GeneralResultPage.xaml";
-            destination += string.Format("?keyword={0}&type={1}", string.Empty, "Operation");
-            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
-
-
-        }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
             string destination = "/AboutPage.xaml";
             NavigationService.Navigate(new Uri(destination, UriKind.Relative));
         }
-
-        private void LBInfo2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LBInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string parmId = ((sender as ListBox).SelectedItem as dynamic).id.ToString();
             string destination = "/InfoDetailPage.xaml";
-            destination += string.Format("?id={0}", parmId);
+            destination += string.Format("?id={0}&type={1}", parmId, "Info");
             NavigationService.Navigate(new Uri(destination, UriKind.Relative));
 
+        }
+
+        private void LBLore_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string parmId = ((sender as ListBox).SelectedItem as dynamic).id.ToString();
+            string destination = "/InfoDetailPage.xaml";
+            destination += string.Format("?id={0}&type={1}", parmId, "Lore");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
 
         }
     }

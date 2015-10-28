@@ -23,6 +23,8 @@ namespace Healthcare
         private InfoShowItem oInfo = new InfoShowItem();
         private static InfoServer infoser = new InfoServer();
         private string idStr = string.Empty;
+        private string type = string.Empty;
+
         public InfoDetailPage()
         {
             InitializeComponent();
@@ -34,9 +36,15 @@ namespace Healthcare
             if (parameters.ContainsKey("id"))
             {
                 idStr = (parameters["id"] as string);
+
+            }
+            if (parameters.ContainsKey("type"))
+            {
+                type = (parameters["type"] as string);
+
             }
             HttpHelper ht = new HttpHelper();
-            string url = StaticURLHelper.InfoShow;
+            string url = StaticURLHelper.GetURL(type)[0];
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("id", idStr);
             ht.CreatePostHttpResponse(url, dic);
