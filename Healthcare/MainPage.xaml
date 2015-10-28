@@ -11,7 +11,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0.1" Background="Black">
 
     <phone:PhoneApplicationPage.Resources>
         <ResourceDictionary x:Name="rd01" Source="Dictionary/MainPageResourceDictionary.xaml"></ResourceDictionary>
@@ -19,7 +19,119 @@
 
     <!--LayoutRoot 是包含所有页面内容的根网格-->
     <!--LayoutRoot 是包含所有页面内容的根网格-->
-    <phone:Panorama x:Name="PanoramaMain">
+    <phone:Panorama x:Name="PanoramaMain" Margin="0,10,0,0">
+        <phone:PanoramaItem Header="检索">
+            <Grid x:Name="LayoutRoot" Background="Transparent">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--ContentPanel - 在此处放置其他内容-->
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="0.8*"></RowDefinition>
+                        <RowDefinition Height="0.4*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="78"></RowDefinition>
+                                <RowDefinition ></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" VerticalAlignment="Bottom">
+                                <TextBlock Margin="10,18">
+                                    键入你的症状：
+                                </TextBlock>
+                            </Grid>
+                            <StackPanel Orientation="Vertical" Grid.Row="1">
+                                <Border x:Name="BD_TBFrame" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="{StaticResource PhoneForegroundBrush}" CornerRadius="36">
+                                    <TextBox x:Name="TBMainSearch"  
+                             HorizontalAlignment="Left"
+                             Style="{StaticResource TextBoxStyle1}" 
+                             GotFocus="TBMainSearch_GotFocus" LostFocus="TBMainSearch_LostFocus" 
+                             SelectionForeground="{StaticResource PhoneForegroundBrush}"
+                             Foreground="{StaticResource PhoneForegroundBrush}" Loaded="TBMainSearch_Loaded" Margin="0,0,-1,0" Width="419">
+                                    </TextBox>
+                                </Border>
+
+                                <Button x:Name="BTNSearch" Content="Button"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" Click="BTNSearch_Click" Margin="0,10" >
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <!--<RowDefinition></RowDefinition>-->
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.ColumnSpan="3" Grid.Row="0" Margin="10,0">
+                                    其他查询：
+                        </TextBlock>
+
+                        <Grid Grid.Row="1" Grid.Column="0">
+                            <Button BorderBrush="{x:Null}" Template="{StaticResource 药品直达ButtonControlTemplate}"></Button>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Button BorderBrush="{x:Null}" x:Name="BTN检查项目" Click="BTN检查项目_Click" Template="{StaticResource 检查项目ButtonControlTemplate}"></Button>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="2">
+                            <Button BorderBrush="{x:Null}" x:Name="BTN手术项目" Click="BTN手术项目_Click" Template="{StaticResource 手术项目ButtonControlTemplate}"></Button>
+
+                        </Grid>
+                        <!--<Grid Grid.Row="1" Grid.Column="0">
+                            <Button BorderBrush="{x:Null}" x:Name="BTN食疗大全" Click="BTN食疗大全_Click" Template="{StaticResource 食疗大全ButtonControlTemplate}"></Button>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Button BorderBrush="{x:Null}" x:Name="BTN健康食品" Click="BTN健康食品_Click" Template="{StaticResource 健康食品ButtonControlTemplate}"></Button>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="2">
+                            <Button BorderBrush="{x:Null}" x:Name="BTN健康知识" Click="BTN健康知识_Click" Template="{StaticResource 健康知识ButtonControlTemplate}"></Button>
+
+                        </Grid>
+                        <Grid Grid.Row="2" Grid.Column="0">
+                            <Button BorderBrush="{x:Null}" Template="{StaticResource 健康资讯ButtonControlTemplate}"></Button>
+
+                        </Grid>
+                        <Grid Grid.Row="2" Grid.Column="1">
+                            <Button BorderBrush="{x:Null}" Template="{StaticResource 医院大全ButtonControlTemplate}"></Button>
+
+                        </Grid>
+                        <Grid Grid.Row="2" Grid.Column="2">
+                            <Button BorderBrush="{x:Null}" Template="{StaticResource 药店大全ButtonControlTemplate}"></Button>
+
+                        </Grid>-->
+
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.ColumnSpan="3">
+                        <TextBlock HorizontalAlignment="Left" Margin="20,10" VerticalAlignment="Center">dddd</TextBlock>
+                        <HyperlinkButton HorizontalAlignment="Right" Margin="20,10" Click="HyperlinkButton_Click">关于
+                        </HyperlinkButton>
+                    </Grid>
+
+                </Grid>
+
+                <!--取消注释，以显示对齐网格，从而帮助确保
+            控件在公用边界上对齐。图像在系统栏中显示时的
+            上边距为 -32px。如果隐藏了系统栏，则将此值设为 0
+            (或完全删除边距)。
+
+            在发送之前删除此 XAML 和图像本身。-->
+                <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+            </Grid>
+
+        </phone:PanoramaItem>
         <phone:PanoramaItem Header="健康资讯">
             <ListBox x:Name="LBInfo" SelectionChanged="LBInfo_SelectionChanged">
                 <ListBox.ItemTemplate>
@@ -50,118 +162,35 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </phone:PanoramaItem>
-        <!--Panorama 项目一-->
-        <phone:PanoramaItem Header="">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition ></RowDefinition>
-                    <RowDefinition ></RowDefinition>
-                    <RowDefinition ></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0" VerticalAlignment="Bottom">
-                    <TextBlock Margin="10,18">
-                        键入你的症状：
-                    </TextBlock>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Border x:Name="BD_TBFrame" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="White" CornerRadius="36">
-                        <TextBox x:Name="TBMainSearch"  
-                             HorizontalAlignment="Left"
-                             Style="{StaticResource TextBoxStyle1}" 
-                             GotFocus="TBMainSearch_GotFocus" LostFocus="TBMainSearch_LostFocus" 
-                             SelectionForeground="{StaticResource PhoneForegroundBrush}"
-                             Foreground="{StaticResource PhoneForegroundBrush}" Loaded="TBMainSearch_Loaded" Margin="0,0,-1,0" Width="419">
-                        </TextBox>
-                    </Border>
+        <phone:PanoramaItem Header="健康知识">
+            <ListBox x:Name="LBInfo2" SelectionChanged="LBInfo2_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="24,10" Width="375">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="86"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" FontSize="26.667" TextWrapping="Wrap" Text="{Binding Path=title}" VerticalAlignment="Bottom"></TextBlock>
+                            <Grid Grid.Row="1" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="135"></ColumnDefinition>
+                                    <ColumnDefinition Width="135"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=time}"></TextBlock>
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}">
+                                    阅读:<Run Text="{Binding Path=count}"></Run>
+                                </TextBlock>
+                                <TextBlock Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource PhoneTextSubtleStyle}">
+                                    评论:<Run Text="{Binding Path=rcount}"></Run>
+                                </TextBlock>
 
-                    <Button x:Name="BTNSearch" Content="Button"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" Click="BTNSearch_Click" >
-                    </Button>
-                </Grid>
-            </Grid>
-        </phone:PanoramaItem>
-
-        <!--Panorama 项目二-->
-        <phone:PanoramaItem Header="所有应用">
-            <Grid x:Name="LayoutRoot" Background="Transparent">
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <!--ContentPanel - 在此处放置其他内容-->
-                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Grid Grid.Row="0">
-                    </Grid>
-                    <Grid Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Row="0" Grid.Column="0">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 药品直达ButtonControlTemplate}"></Button>
+                            </Grid>
                         </Grid>
-                        <Grid Grid.Row="0" Grid.Column="1">
-                            <Button BorderBrush="{x:Null}" x:Name="BTN检查项目" Click="BTN检查项目_Click" Template="{StaticResource 检查项目ButtonControlTemplate}"></Button>
-
-                        </Grid>
-                        <Grid Grid.Row="0" Grid.Column="2">
-                            <Button BorderBrush="{x:Null}" x:Name="BTN手术项目" Click="BTN手术项目_Click" Template="{StaticResource 手术项目ButtonControlTemplate}"></Button>
-
-                        </Grid>
-                        <Grid Grid.Row="1" Grid.Column="0">
-                            <Button BorderBrush="{x:Null}" x:Name="BTN食疗大全" Click="BTN食疗大全_Click" Template="{StaticResource 食疗大全ButtonControlTemplate}"></Button>
-
-                        </Grid>
-                        <Grid Grid.Row="1" Grid.Column="1">
-                            <Button BorderBrush="{x:Null}" x:Name="BTN健康食品" Click="BTN健康食品_Click" Template="{StaticResource 健康食品ButtonControlTemplate}"></Button>
-
-                        </Grid>
-                        <Grid Grid.Row="1" Grid.Column="2">
-                            <Button BorderBrush="{x:Null}" x:Name="BTN健康知识" Click="BTN健康知识_Click" Template="{StaticResource 健康知识ButtonControlTemplate}"></Button>
-
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="0">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 健康资讯ButtonControlTemplate}"></Button>
-
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="1">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 医院大全ButtonControlTemplate}"></Button>
-
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="2">
-                            <Button BorderBrush="{x:Null}" Template="{StaticResource 药店大全ButtonControlTemplate}"></Button>
-
-                        </Grid>
-
-                    </Grid>
-                    <Grid Grid.Row="2" Grid.ColumnSpan="3">
-                        <TextBlock HorizontalAlignment="Right">
-                	<Run Text="所有应用"/>
-                        </TextBlock>
-                    </Grid>
-
-                </Grid>
-
-                <!--取消注释，以显示对齐网格，从而帮助确保
-            控件在公用边界上对齐。图像在系统栏中显示时的
-            上边距为 -32px。如果隐藏了系统栏，则将此值设为 0
-            (或完全删除边距)。
-
-            在发送之前删除此 XAML 和图像本身。-->
-                <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
-            </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
         </phone:PanoramaItem>
     </phone:Panorama>

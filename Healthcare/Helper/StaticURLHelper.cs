@@ -22,7 +22,8 @@ namespace Healthcare.Helper
         public static string OperationShowByPlace = "http://www.tngou.net/api/operation/place";
         public static string OperationShowByDepartment = "http://www.tngou.net/api/operation/department";
         public static string FoodShow = "http://www.tngou.net/api/food/show";
-
+        public static string LoreShow = "http://www.tngou.net/api/lore/show";
+        public static string LoreList = "http://www.tngou.net/api/lore/list";
 
 
         public static string InfoShow = "http://www.tngou.net/api/info/show";

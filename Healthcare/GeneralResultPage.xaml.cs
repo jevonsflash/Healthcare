@@ -31,7 +31,6 @@ namespace Healthcare
             : base()
         {
             InitializeComponent();
-            InitBGStyle();
         }
 
         #region 事件
@@ -233,14 +232,6 @@ namespace Healthcare
 
             }
 
-        }
-        private void InitBGStyle()
-        {
-            BitmapImage bi01 = new BitmapImage(new Uri("img/metro.png", UriKind.Relative));
-            ImageBrush ib01 = new ImageBrush();
-            ib01.ImageSource = bi01;
-            ib01.Opacity = 10;
-            this.LayoutRoot.Background = ib01;
         }
         private void InitFilterControl(List<BaseMap> list)
         {

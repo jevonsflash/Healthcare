@@ -92,9 +92,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\Background.cs" />
     <Compile Include="Common\JMessBox.cs" />
     <Compile Include="Converter\ViewMoreConverter.cs" />
     <Compile Include="Helper\DeserializeHelper.cs" />
@@ -171,6 +175,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GeneralDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -268,15 +276,8 @@
     <Content Include="ico\药品直达.png" />
     <Content Include="ico\药店大全.png" />
     <Content Include="ico\食疗大全.png" />
-    <Content Include="Img\matoblack.png" />
-    <Content Include="Img\matograss.png" />
-    <Content Include="Img\matopeace.png" />
+    <Content Include="Img\bg1.png" />
     <Content Include="Img\metro.png" />
-    <Content Include="Img\thumb\thumb_classic.png" />
-    <Content Include="Img\thumb\thumb_matoblack.png" />
-    <Content Include="Img\thumb\thumb_matograss.png" />
-    <Content Include="Img\thumb\thumb_matopeace.jpg" />
-    <Content Include="Img\thumb\thumb_metro.png" />
     <Content Include="Img\UserContro.png" />
     <Content Include="operation.xml" />
     <Content Include="symptom.xml" />
@@ -287,7 +288,9 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Img\thumb\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Drawing" />
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />

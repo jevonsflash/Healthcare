@@ -20,22 +20,49 @@ namespace Healthcare
     public partial class MainPage : PhoneApplicationPage
     {
         private static InfoServer infoser = new InfoServer();
+        private static LoreServer loreser = new LoreServer();
 
         // 构造函数
         public MainPage()
         {
             InitializeComponent();
-            InitBGStyle();
             // 用于本地化 ApplicationBar 的示例代码
             //BuildLocalizedApplicationBar();
             int page = 1;
+            string url1 = StaticURLHelper.InfoList;
+            string url2 = StaticURLHelper.LoreList;
             HttpHelper ht = new HttpHelper();
-            string url = "http://www.tngou.net/api/info/list";
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("page", page.ToString());
-            ht.CreatePostHttpResponse(url, dic);
+            ht.CreatePostHttpResponse(url1, dic);
             ht.FileWatchEvent += Ht_FileWatchEvent;
+
+            HttpHelper ht2 = new HttpHelper();
+            Dictionary<string, string> dic2 = new Dictionary<string, string>();
+            dic2.Add("page", page.ToString());
+            ht2.CreatePostHttpResponse(url2, dic2);
+            ht2.FileWatchEvent += Ht_FileWatchEvent2;
+            MessageBox.Show((App.RootFrame.Foreground as SolidColorBrush).Color.ToString());
+
         }
+
+        private void Ht_FileWatchEvent2(object sender, CompleteEventArgs e)
+        {
+            List<LoreShowItem> temp = loreser.LoreShowDeserializer(e.Node).ToList();
+            this.Dispatcher.BeginInvoke(() =>
+            {
+                this.LBInfo2.ItemsSource = temp.Select(c => new
+                {
+                    id = c.id,
+                    title = c.title,
+                    time = TimeHelper.TimeStamptoDateTime(c.time.ToString()).ToString("MM月dd日"),
+                    count = c.count,
+                    rcount = c.rcount
+                });
+
+            });
+        }
+
         private void Ht_FileWatchEvent(object sender, CompleteEventArgs e)
         {
             List<InfoShowItem> temp = infoser.InfoShowDeserializer(e.Node).ToList();
@@ -101,15 +128,6 @@ namespace Healthcare
 
             }
 
-        }
-        private void InitBGStyle()
-        {
-
-            BitmapImage bi01 = new BitmapImage(new Uri("img/metro.png", UriKind.Relative));
-            ImageBrush ib01 = new ImageBrush();
-            ib01.ImageSource = bi01;
-            ib01.Opacity = 10;
-            this.PanoramaMain.Background = ib01;
         }
 
         private void BTNSearch_Click(object sender, RoutedEventArgs e)
@@ -193,6 +211,22 @@ namespace Healthcare
         {
             string destination = "/GeneralResultPage.xaml";
             destination += string.Format("?keyword={0}&type={1}", string.Empty, "Operation");
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+
+
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            string destination = "/AboutPage.xaml";
+            NavigationService.Navigate(new Uri(destination, UriKind.Relative));
+        }
+
+        private void LBInfo2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string parmId = ((sender as ListBox).SelectedItem as dynamic).id.ToString();
+            string destination = "/InfoDetailPage.xaml";
+            destination += string.Format("?id={0}", parmId);
             NavigationService.Navigate(new Uri(destination, UriKind.Relative));
 
 
