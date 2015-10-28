@@ -12,6 +12,8 @@ namespace Healthcare
 {
     public partial class DrugSubPage : PhoneApplicationPage
     {
+        private PhoneApplicationService phoneser = new PhoneApplicationService();
+
         public DrugSubPage()
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace Healthcare
 
         private void BTNDrugNumber_Click(object sender, RoutedEventArgs e)
         {
+            phoneser.State.Add("number",)
             string destination = "/GeneralResultPage.xaml";
             destination += string.Format("?keyword={0}&type={1}", string.Empty, "DrugNumber");
             NavigationService.Navigate(new Uri(destination, UriKind.Relative));
