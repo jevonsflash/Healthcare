@@ -11,8 +11,6 @@ D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Assets\ApplicationIcon.png
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
-D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
-D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Assets\Tiles\IconicTileSmall.png
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Healthcare.dll
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Healthcare.pdb
 D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\resources.pri
@@ -40,8 +38,17 @@ D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MultipleQualifiersPerDimensio
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\ProjectArchitectures.txt
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MDILProjectFiles.xml
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\XapCacheFile.xml
-D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\Healthcare.csprojResolveAssemblyReference.cache
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MyUserControl\FilterSelectorControl.g.cs
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MyUserControl\MsgBoxControl.g.cs
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\InfoDetailPage.g.cs
 D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\AboutPage.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\DrugSubPage.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\DrugResultPage.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\MyUserControl\ItemControlHttp.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\DrugDetailPage.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Silverlight_ZXing_Core.dll
+D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\WP7_Barcode_Library.dll
+D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\Silverlight_ZXing_Core.xml
+D:\Project\C#\test\Healthcare\Healthcare\Bin\Debug\WP7_Barcode_Library.xml
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\BarCode.g.cs
+D:\Project\C#\test\Healthcare\Healthcare\obj\Debug\Healthcare.csprojResolveAssemblyReference.cache

@@ -11,26 +11,72 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0.1">
+    <phone:PhoneApplicationPage.Resources>
+        <ResourceDictionary x:Name="rd01" Source="Dictionary/MainPageResourceDictionary.xaml"></ResourceDictionary>
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot 是包含所有页面内容的根网格-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,30,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.7*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel 包含应用程序的名称和页标题-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="我的应用程序" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="页面名称" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="药品直达" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
+        <Grid Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="78"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" VerticalAlignment="Bottom">
+                <TextBlock Margin="10,18">
+                    键入关键字或国药准字：
+                </TextBlock>
+            </Grid>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="TBPrefix" Grid.Column="0" VerticalAlignment="Center" FontSize="29.333" Foreground="Gold" Visibility="Collapsed">国药准字Z</TextBlock>
+                    <Border x:Name="BD_TBFrame" Grid.Column="1" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="{StaticResource PhoneForegroundBrush}" CornerRadius="36">
+                        <TextBox x:Name="TBMainSearch"  
+                             HorizontalAlignment="Left"
+                             Style="{StaticResource TextBoxStyle1}" 
+                             GotFocus="TBMainSearch_GotFocus" LostFocus="TBMainSearch_LostFocus" 
+                             SelectionForeground="{StaticResource PhoneForegroundBrush}"
+                             Foreground="{StaticResource PhoneForegroundBrush}" 
+                             Loaded="TBMainSearch_Loaded" Margin="0,0,-1,0"
+                                 Width="480">
+                        </TextBox>
+                    </Border>
+                </Grid>
+                <Button x:Name="BTNSearch" Content="搜索"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" Click="BTNSearch_Click" Margin="0,10" >
+                </Button>
+            </StackPanel>
+        </Grid>
 
         <!--ContentPanel - 在此处放置其他内容-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button x:Name="BTNDrug" Click="BTNDrug_Click"></Button>
-            <Button x:Name="BTNDrugNumber" Click="BTNDrugNumber_Click"></Button>
-            <Button x:Name="BTNDrugCode" Click="BTNDrugCode_Click"></Button>
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="78"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Margin="10,18">
+                方式：
+            </TextBlock>
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" >
+                <ToggleButton x:Name="BTNDrug" Margin="10" Click="BTNDrug_Click">按关键字查找</ToggleButton>
+                <ToggleButton x:Name="BTNDrugNumber" Margin="10" Click="BTNDrugNumber_Click">按国药准字号查找</ToggleButton>
+                <Button x:Name="BTNDrugCode" Margin="10" Click="BTNDrugCode_Click" >条码扫描</Button>
+            </StackPanel>
         </Grid>
     </Grid>
 

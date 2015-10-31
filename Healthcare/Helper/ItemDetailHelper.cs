@@ -63,7 +63,7 @@ namespace Healthcare.Helper
                     result.Add("手术部位", oCheck.place);
                     result.Add("相关疾病", oCheck.disease);
                     result.Add("相关病状", oCheck.symptom);
-                    result.Add("详情信息", oCheck.message);
+                    result.Add("详细信息", oCheck.message);
                     break;
                 case "Operation":
                     OperationShowItem oOperation = operationser.OperationObjectDeserializer(jsonStr);
@@ -72,7 +72,7 @@ namespace Healthcare.Helper
                     result.Add("相关疾病", oOperation.disease);
                     result.Add("手术科室", oOperation.department);   //手术科室
                     result.Add("手术部位", oOperation.place);   //手术部位
-                    result.Add("详情信息", oOperation.message); //详情
+                    result.Add("详细信息", oOperation.message); //详情
                     break;
                 case "Food":
                     FoodShowItem oFood = foodser.FoodObjectDeserializer(jsonStr);

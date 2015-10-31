@@ -14,7 +14,7 @@ namespace Healthcare.Helper
         private static DiseaseServer diseaseser = new DiseaseServer();
         private static CheckServer checkser = new CheckServer();
         private static OperationServer operationser = new OperationServer();
-        private static FoodServer foodser = new FoodServer();
+        private static DrugServer drugser = new DrugServer();
 
         public static List<KeyWordsMap> GetMap(string typeName, string jsonStr)
         {
@@ -62,9 +62,10 @@ namespace Healthcare.Helper
 
                     }).ToList();
                     break;
-                case "Food":
-                    List<FoodShowItem> oFoodList = foodser.FoodShowDeserializer(jsonStr).ToList();
-                    Map = oFoodList.Select(c => new KeyWordsMap
+
+                case "Drug":
+                    List<DrugShowItem> oDrugList = drugser.DrugShowDeserializer(jsonStr).ToList();
+                    Map = oDrugList.Select(c => new KeyWordsMap
                     {
                         id = c.id,
                         name = c.name,
@@ -72,7 +73,17 @@ namespace Healthcare.Helper
 
                     }).ToList();
                     break;
-
+                case "DrugNumber":
+                case "DrugCode":
+                    DrugShowItem oDrugNumber = new DrugShowItem();
+                    oDrugNumber = drugser.DrugObjectDeserializer(jsonStr);
+                    Map.Add(new KeyWordsMap()
+                    {
+                        id = oDrugNumber.id,
+                        name = oDrugNumber.name,
+                        keywords = oDrugNumber.keywords.TrimEnd(' ').Split(' ')
+                    });
+                    break;
 
             }
             return Map;

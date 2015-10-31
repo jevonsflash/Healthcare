@@ -10,7 +10,7 @@
     xmlns:my="clr-namespace:Healthcare.MyUserControl"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0.1">
     <phone:PhoneApplicationPage.Resources>
         <ResourceDictionary x:Name="rd01" Source="Dictionary/MainPageResourceDictionary.xaml"/>
     </phone:PhoneApplicationPage.Resources>
@@ -25,7 +25,7 @@
         <StaticResource ResourceKey="PhoneForegroundBrush"/>
     </phone:PhoneApplicationPage.Foreground>
     <!--LayoutRoot 是包含所有页面内容的根网格-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,30,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -33,7 +33,9 @@
 
         <!--TitlePanel 包含应用程序的名称和页标题-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="我的应用程序" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}">
+                正在查询<Run x:Name="TBPageTitle"></Run>
+            </TextBlock>
         </StackPanel>
         <!--ContentPanel - 在此处放置其他内容-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
@@ -44,7 +46,7 @@
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Border x:Name="BD_TBFrame" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="White" CornerRadius="36">
+                <Border x:Name="BD_TBFrame" VerticalAlignment="Top" BorderThickness="1" Height="72" BorderBrush="{StaticResource PhoneForegroundBrush}" CornerRadius="36">
                     <TextBox x:Name="TBMainSearch"
 						HorizontalAlignment="Left"
 						Width="333" 

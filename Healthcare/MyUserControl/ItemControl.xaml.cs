@@ -7,25 +7,51 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Diagnostics;
 
 namespace Healthcare.MyUserControl
 {
     public partial class ItemControl : UserControl
     {
-        public ItemControl()
+        private string title;
+        private string con;
+
+        public string Title
         {
-            InitializeComponent();
+            get { return title; }
+            set { title = value; }
+        }
+        public string Con
+        {
+            get { return con; }
+            set { con = value; }
         }
 
-        private void BTNMore_Click(object sender, RoutedEventArgs e)
+        public ItemControl(string title, string con)
         {
-            if ((bool)this.BTNMore.IsChecked)
+            this.Title = title;
+            this.Con = con;
+            InitializeComponent();
+            Loaded += ItemControl_Loaded;
+        }
+
+        private void ItemControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.TBTitle.Text = Title;
+            this.TBCon.Text = Con;
+            Debug.WriteLine("当前ItemBlock高度"+this.ItemBlock.ActualHeight);
+        }
+       
+
+        private void BTNFlip_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)this.BTNFlip.IsChecked)
             {
-                this.ItemBlock.MaxHeight = 4800;
+                this.TBCon.MaxHeight = 0;
             }
             else
             {
-                this.ItemBlock.MaxHeight = 480;
+                this.TBCon.MaxHeight = double.MaxValue;
 
             }
 

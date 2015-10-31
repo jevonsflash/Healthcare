@@ -55,7 +55,6 @@ namespace Healthcare.Server
             string img = item["img"].ToString() ?? "";
             string description = item["description"].ToString() ?? "";
             string keywords = item["keywords"].ToString() ?? "";
-            int infoclass = int.Parse(item["infoclass"].ToString());
             long time = long.Parse(item["time"].ToString());
             string title = item["title"].ToString() ?? "";
 
@@ -66,7 +65,6 @@ namespace Healthcare.Server
             oInfoShowItem.img = img;//图片
             oInfoShowItem.description = description;
             oInfoShowItem.keywords = keywords;
-            oInfoShowItem.infoclass = infoclass;
             oInfoShowItem.time = time;
             oInfoShowItem.title = title;
 

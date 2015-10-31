@@ -43,7 +43,6 @@ namespace Healthcare
             dic2.Add("page", page.ToString());
             ht2.CreatePostHttpResponse(url2, dic2);
             ht2.FileWatchEvent += Ht_FileWatchEvent2;
-            MessageBox.Show((App.RootFrame.Foreground as SolidColorBrush).Color.ToString());
 
         }
 

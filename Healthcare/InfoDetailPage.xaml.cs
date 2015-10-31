@@ -44,7 +44,7 @@ namespace Healthcare
 
             }
             HttpHelper ht = new HttpHelper();
-            string url = StaticURLHelper.GetURL(type)[0];
+            string url = StaticURLHelper.GetURL(type).Show;
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("id", idStr);
             ht.CreatePostHttpResponse(url, dic);
@@ -61,25 +61,10 @@ namespace Healthcare
                 this.TBTime.Text = TimeHelper.TimeStamptoDateTime(oInfo.time.ToString()).ToString("MM月dd日");
                 this.TBCount.Text = oInfo.count.ToString();
                 this.TBRcount.Text = oInfo.rcount.ToString();
-                StrToParagraph(oInfo.message);
+                Uri uri = HtmlHelper.StrToHTML(oInfo.message);
+                this.wb.Navigate(uri);
+
             });
-        }
-        public void StrToParagraph(string input)
-        {
-            using (IsolatedStorageFile file = IsolatedStorageFile.GetUserStoreForApplication())
-            {
-                if (!file.DirectoryExists("temp"))
-                    file.CreateDirectory("temp");
-                using (IsolatedStorageFileStream fs = new IsolatedStorageFileStream("temp\\review.html", System.IO.FileMode.Create, file))
-                {
-                    string html = "<!DOCTYPE html><html lang='zh-CN'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' /></head><body>";
-                    html += input;
-                    html += "</body></html>";
-                    byte[] bytes = Encoding.UTF8.GetBytes(html);
-                    fs.Write(bytes, 0, bytes.Length);
-                }
-            }
-            this.wb.Navigate(new Uri("temp\\review.html", UriKind.Relative));
         }
     }
 

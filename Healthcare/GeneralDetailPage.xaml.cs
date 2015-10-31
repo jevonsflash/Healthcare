@@ -64,27 +64,24 @@ namespace Healthcare
                 {
                     this.Dispatcher.BeginInvoke(() =>
                     {
-                        MyUserControl.ItemControl oItem = new MyUserControl.ItemControl();
                         string title = item.Key;
                         string content = string.Empty;
                         if (item.Value == null || item.Value == "")
                         {
-                            content = "暂无信息";
+                            content = "暂无";
                         }
                         else
                         {
-                            content = item.Value.Replace("<p>", string.Empty).Replace("</p>", "\n");
-
+                            content = item.Value;
                         }
-                        oItem.Title.Text = title;
-                        oItem.Content.Text = content;
-                        if (content.Count() > 100)
+                        UIElement oItem;
+                        if (title == "详细信息")
                         {
-                            oItem.BTNMore.Visibility = Visibility.Visible;
+                            oItem = new MyUserControl.ItemControlHttp(title, content);
                         }
                         else
                         {
-                            oItem.BTNMore.Visibility = Visibility.Collapsed;
+                            oItem = new MyUserControl.ItemControl(title, content.Replace("<p>", string.Empty).Replace("</p>", "\n"));
                         }
                         this.SPContentArea.Children.Add(oItem);
                     });

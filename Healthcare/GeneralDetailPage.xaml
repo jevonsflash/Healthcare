@@ -12,9 +12,9 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0.1">
     <!--LayoutRoot 是包含所有页面内容的根网格-->
-    <Grid x:Name="LayoutRoot" Background="White">
+    <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -23,14 +23,14 @@
         <!--TitlePanel 包含应用程序的名称和页标题-->
 
         <!--ContentPanel - 在此处放置其他内容-->
-        <Grid x:Name="ContentPanel" Grid.Row="0" Margin="12,0,12,0" >
-            <ScrollViewer>
+        <Grid x:Name="ContentPanel" Grid.Row="0">
+            <ScrollViewer Margin="0,30,0,0">
                 <StackPanel x:Name="SPContentArea">
                 </StackPanel>
             </ScrollViewer>
         </Grid>
-        <StackPanel Grid.Row="1">
-            <Button x:Name="BTNBack" Grid.Column="0" BorderThickness="0" Click="BTNBack_Click">返回</Button>
+        <StackPanel Grid.Row="1" Background="White">
+            <Button x:Name="BTNBack" Grid.Column="0" BorderThickness="0" Foreground="Black" Click="BTNBack_Click">返回</Button>
         </StackPanel>
 
     </Grid>

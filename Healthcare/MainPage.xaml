@@ -19,7 +19,7 @@
 
     <!--LayoutRoot 是包含所有页面内容的根网格-->
     <!--LayoutRoot 是包含所有页面内容的根网格-->
-    <phone:Panorama x:Name="PanoramaMain" Margin="0,10,0,0">
+    <phone:Panorama x:Name="PanoramaMain" Margin="0,30,0,0">
         <phone:PanoramaItem Header="检索">
             <Grid x:Name="LayoutRoot" Background="Transparent">
 
@@ -57,7 +57,7 @@
                                     </TextBox>
                                 </Border>
 
-                                <Button x:Name="BTNSearch" Content="Button"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" Click="BTNSearch_Click" Margin="0,10" >
+                                <Button x:Name="BTNSearch" Content="搜索"  HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="{x:Null}" Template="{StaticResource ButtonControlTemplate1}" Click="BTNSearch_Click" Margin="0,10" >
                                 </Button>
                             </StackPanel>
                         </Grid>

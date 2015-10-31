@@ -29,7 +29,7 @@
         </Border>
     </ControlTemplate>
     <ControlTemplate x:Key="ButtonControlTemplate3" TargetType="Button">
-        <Border x:Name="ButtonBackground" CornerRadius="30"  Width="158" Height="60" Background="Transparent" BorderThickness="3" BorderBrush="White">
+        <Border x:Name="ButtonBackground" CornerRadius="30"  Width="158" Height="60" Background="Transparent" BorderThickness="3" BorderBrush="{StaticResource PhoneForegroundBrush}">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
                     <VisualStateGroup.Transitions>
@@ -74,8 +74,8 @@
                     <VisualState x:Name="Disabled"/>
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
-					<Run Text="搜索" Foreground="White"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="{TemplateBinding Content}">
+					
             </TextBlock>
         </Border>
     </ControlTemplate>
@@ -84,7 +84,7 @@
 
             <Ellipse Height="100" Stroke="Transparent" Width="100" >
                 <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/病状查询.png" />
+                    <ImageBrush Stretch="Fill" ImageSource="/ico/sympotom.png" />
                 </Ellipse.Fill>
             </Ellipse>
             <TextBlock HorizontalAlignment="Center">
@@ -97,7 +97,7 @@
 
             <Ellipse Height="100" Stroke="Transparent" Width="100" >
                 <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/疾病信息.png" />
+                    <ImageBrush Stretch="Fill" ImageSource="/ico/disease.png" />
                 </Ellipse.Fill>
             </Ellipse>
             <TextBlock HorizontalAlignment="Center">
@@ -110,63 +110,11 @@
 
             <Ellipse Height="100" Stroke="Transparent" Width="100" >
                 <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/检查项目.png" />
+                    <ImageBrush Stretch="Fill" ImageSource="/ico/check.png" />
                 </Ellipse.Fill>
             </Ellipse>
             <TextBlock HorizontalAlignment="Center">
-                    检查项目
-            </TextBlock>
-        </StackPanel>
-    </ControlTemplate>
-    <ControlTemplate x:Key="健康食品ButtonControlTemplate" TargetType="Button">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <Ellipse Height="100" Stroke="Transparent" Width="100" >
-                <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/健康食品.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock HorizontalAlignment="Center">
-                    健康食品
-            </TextBlock>
-        </StackPanel>
-    </ControlTemplate>
-    <ControlTemplate x:Key="健康知识ButtonControlTemplate" TargetType="Button">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <Ellipse Height="100" Stroke="Transparent" Width="100" >
-                <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/健康知识.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock HorizontalAlignment="Center">
-                    健康知识
-            </TextBlock>
-        </StackPanel>
-    </ControlTemplate>
-    <ControlTemplate x:Key="健康资讯ButtonControlTemplate" TargetType="Button">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <Ellipse Height="100" Stroke="Transparent" Width="100" >
-                <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/健康资讯.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock HorizontalAlignment="Center">
-                    健康资讯
-            </TextBlock>
-        </StackPanel>
-    </ControlTemplate>
-    <ControlTemplate x:Key="食疗大全ButtonControlTemplate" TargetType="Button">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <Ellipse Height="100" Stroke="Transparent" Width="100" >
-                <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/食疗大全.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock HorizontalAlignment="Center">
-                    食疗大全
+                    查体检
             </TextBlock>
         </StackPanel>
     </ControlTemplate>
@@ -175,24 +123,11 @@
 
             <Ellipse Height="100" Stroke="Transparent" Width="100" >
                 <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/手术项目.png" />
+                    <ImageBrush Stretch="Fill" ImageSource="/ico/operation.png" />
                 </Ellipse.Fill>
             </Ellipse>
             <TextBlock HorizontalAlignment="Center">
-                    手术项目
-            </TextBlock>
-        </StackPanel>
-    </ControlTemplate>
-    <ControlTemplate x:Key="药店大全ButtonControlTemplate" TargetType="Button">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <Ellipse Height="100" Stroke="Transparent" Width="100" >
-                <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/药店大全.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock HorizontalAlignment="Center">
-                    药店大全
+                    查手术
             </TextBlock>
         </StackPanel>
     </ControlTemplate>
@@ -201,37 +136,11 @@
 
             <Ellipse Height="100" Stroke="Transparent" Width="100" >
                 <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/药品直达.png" />
+                    <ImageBrush Stretch="Fill" ImageSource="/ico/drug.png" />
                 </Ellipse.Fill>
             </Ellipse>
             <TextBlock HorizontalAlignment="Center">
-                    药品直达
-            </TextBlock>
-        </StackPanel>
-    </ControlTemplate>
-    <ControlTemplate x:Key="药企大全ButtonControlTemplate" TargetType="Button">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <Ellipse Height="100" Stroke="Transparent" Width="100" >
-                <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/药企大全.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock HorizontalAlignment="Center">
-                    药企大全
-            </TextBlock>
-        </StackPanel>
-    </ControlTemplate>
-    <ControlTemplate x:Key="医院大全ButtonControlTemplate" TargetType="Button">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <Ellipse Height="100" Stroke="Transparent" Width="100" >
-                <Ellipse.Fill>
-                    <ImageBrush Stretch="Fill" ImageSource="/ico/医院大全.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock HorizontalAlignment="Center">
-                    医院大全
+                    查药品
             </TextBlock>
         </StackPanel>
     </ControlTemplate>

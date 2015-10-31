@@ -8,22 +8,26 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    d:DesignHeight="480" d:DesignWidth="480">
-    <UserControl.Resources>
-        <my:ViewMoreConverter x:Key="ViewMoreConverter"></my:ViewMoreConverter>
-    </UserControl.Resources>
-        <Grid Background="White" Opacity="0.8" x:Name="ItemBlock" MaxHeight="480" MinHeight="150">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"></RowDefinition>
-                <RowDefinition ></RowDefinition>
-                <RowDefinition Height="80"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Rectangle Margin="0,0,450,0" Fill="Green"/>
-            <TextBlock x:Name="Title" Grid.Row="0"  Foreground="Black" FontSize="48" Margin="35,0,10,0"></TextBlock>
-            <TextBlock x:Name="Content" Grid.Row="1" TextWrapping="Wrap" Foreground="Black" FontSize="32" Margin="35,0,10,0">
+    d:DesignHeight="480">
+    <Grid Background="White" x:Name="ItemBlock">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition  Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Height="20" Width="20" Fill="Green" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Column="1" x:Name="TBTitle"  Foreground="Black" Style="{StaticResource PhoneTextTitle2Style}" Margin="15,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Center">
             </TextBlock>
-            <ToggleButton x:Name="BTNMore"  Visibility="Collapsed" Grid.Row="2" Foreground="Black"  BorderBrush="{x:Null}" BorderThickness="0" Padding="0" Click="BTNMore_Click">
-                <TextBlock>点击查看更多</TextBlock>
+            <ToggleButton Grid.Column="2" x:Name="BTNFlip" Foreground="Black"  BorderBrush="{x:Null}" BorderThickness="0" Click="BTNFlip_Click">
+                <TextBlock>收起</TextBlock>
             </ToggleButton>
         </Grid>
+        <TextBlock x:Name="TBCon" Grid.Row="1" TextWrapping="Wrap" Foreground="Black" Style="{StaticResource PhoneTextNormalStyle}" Margin="35,0,10,0">
+        </TextBlock>
+    </Grid>
 </UserControl>

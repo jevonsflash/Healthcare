@@ -77,10 +77,7 @@ namespace Healthcare
             {
                 keyword = (parameters["keyword"] as string);
             }
-            if (parameters.ContainsKey("id"))
-            {
-                strId = (parameters["id"] as string);
-            }
+            this.TBPageTitle.Text = TitleHelper.GetTitle(type);
             this.TBMainSearch.Text = keyword;
             InitFilterButton("", "", "");
             result = await GetData(keyword);
@@ -92,12 +89,7 @@ namespace Healthcare
             {
                 string url = string.Empty;
                 url = StaticURLHelper.GetURL(type).List;
-                Dictionary<string, string> dic = new Dictionary<string, string>();
-                if (!string.IsNullOrEmpty(strId))
-                {
-                    dic.Add("id", strId);
-                }
-                GetJSON(url, dic);
+                GetJSON(url, new Dictionary<string, string>());
             }
             base.OnNavigatedTo(e);
         }
