@@ -99,11 +99,11 @@
                     </StackPanel>
                     <RichTextBox Grid.Row="8" IsReadOnly="True">
                         <RichTextBox.Blocks>
-                            <Paragraph >如果您觉得番茄健康助手不错，来吧，给我点动力！
+                            <Paragraph >如果您觉得番茄健康助手不错，请支持我！
                             </Paragraph>
                         </RichTextBox.Blocks>
                     </RichTextBox>
-                    <Button x:Name="BTNLove" Grid.Row="9">
+                    <Button x:Name="BTNLove" Grid.Row="9" Click="BTNLove_Click">
                         亲，给个好评吧
                     </Button>
                     <RichTextBox Grid.Row="10" IsReadOnly="True">
@@ -117,7 +117,7 @@
                                 也可以关注我的新浪微博：
                                 <LineBreak></LineBreak>
                                 <InlineUIContainer>
-                                    <HyperlinkButton x:Name="BTNWeibo"   Content="@siuxing_小圣" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <HyperlinkButton x:Name="BTNWeibo" Click="BTNWeibo_Click"  Content="@siuxing_小圣" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                 </InlineUIContainer>
                             </Paragraph>
                         </RichTextBox.Blocks>

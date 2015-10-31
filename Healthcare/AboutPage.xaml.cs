@@ -29,5 +29,20 @@ namespace Healthcare
             ect01.Show();
         }
 
+        private void BTNLove_Click(object sender, RoutedEventArgs e)
+        {
+            MarketplaceReviewTask marketplaceReviewTask = new MarketplaceReviewTask();
+            marketplaceReviewTask.Show();
+
+        }
+
+        private void BTNWeibo_Click(object sender, RoutedEventArgs e)
+        {
+            WebBrowserTask wbt01 = new WebBrowserTask();
+            UriBuilder uriSite = new UriBuilder("http://weibo.com/jevonsflash");
+            wbt01.Uri = uriSite.Uri;
+            wbt01.Show();
+
+        }
     }
 }

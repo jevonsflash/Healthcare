@@ -51,3 +51,4 @@ D:\Project\C#\test\Healthcare\Healthcare\obj\Release\MultipleQualifiersPerDimens
 D:\Project\C#\test\Healthcare\Healthcare\obj\Release\ProjectArchitectures.txt
 D:\Project\C#\test\Healthcare\Healthcare\obj\Release\MDILProjectFiles.xml
 D:\Project\C#\test\Healthcare\Healthcare\obj\Release\XapCacheFile.xml
+D:\Project\C#\test\Healthcare\Healthcare\obj\Release\Healthcare.csprojResolveAssemblyReference.cache

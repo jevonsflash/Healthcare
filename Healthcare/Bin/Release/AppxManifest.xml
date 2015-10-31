@@ -7,7 +7,7 @@
 
   有关程序包清单文件的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=241727
  -->
-  <Identity Name="d07e49b1-0b86-45e4-b02b-130101f4427e" Publisher="CN=linxiao" Version="1.0.0.0" ProcessorArchitecture="neutral" />
+  <Identity Name="27272linxiao.76069F8A87C" Publisher="CN=66CEE570-ACBF-4104-8CBB-C23C997CC5A8" Version="1.0.0.0" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="76e8d2ec-a834-4d44-af8d-75b381649da3" PhonePublisherId="c5c094b5-5a7d-4ea3-a05a-5312f42c8691" />
   <Properties>
     <DisplayName>Healthcare</DisplayName>
